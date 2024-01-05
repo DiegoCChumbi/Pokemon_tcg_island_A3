@@ -1,0 +1,1 @@
+vstar_habilidad_bn_gfx.o: vstar_habilidad_bn_gfx.s

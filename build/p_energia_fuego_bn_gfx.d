@@ -1,0 +1,1 @@
+p_energia_fuego_bn_gfx.o: p_energia_fuego_bn_gfx.s

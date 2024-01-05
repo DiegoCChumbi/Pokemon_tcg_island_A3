@@ -1,0 +1,1 @@
+siniestro_habilidad_bn_gfx.o: siniestro_habilidad_bn_gfx.s

@@ -1,0 +1,1 @@
+p_psiquico_habilidad_bn_gfx.o: p_psiquico_habilidad_bn_gfx.s

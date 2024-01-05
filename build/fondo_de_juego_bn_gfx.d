@@ -1,0 +1,1 @@
+fondo_de_juego_bn_gfx.o: fondo_de_juego_bn_gfx.s
