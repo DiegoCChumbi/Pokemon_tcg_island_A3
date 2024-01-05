@@ -398,6 +398,8 @@ void descarte_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& i
     agrega_carta(tronco,imagenes,retirado,indices,3);
 }
 
+//test
+
 /*
 
 [A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][T][U][V][W][X][Y][Z][A][B][C][D][E][F][G][H][I][J][K][L][M][N][O][P][Q][R][S][T][U][V][W][X][Y][Z][A][B][C][D][E][F]
