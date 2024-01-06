@@ -15,6 +15,7 @@
 
 #include "funciones_cartas.h"
 #include "carta.h"
+#include "funciones_diccionario.h"
 
 void combate(bn::vector<carta,60>& deck_jugador,bn::vector<carta,60>& deck_oponente,bn::random random);
 void agrega_imagen(bn::vector<carta,60> tronco, bn::vector<bn::sprite_ptr,60>& imagenes,carta _carta);
@@ -23,6 +24,7 @@ carta retirar_carta(bn::vector<carta,60> &tronco,bn::vector<bn::sprite_ptr,60>& 
 void cambio(bn::vector<carta,60>& tronco,int a, int b);
 void barajear(bn::vector<carta,60>& tronco,int indices[4],int n,bn::random random);
 void agrega_carta(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,class carta _carta,int indices[4],int a);
+bool verificar_mano_inicial(bn::vector<carta,60> tronco, int indices[4]);
 
 //Movimiento de cartas
 void robar_carta(bn::vector<carta,60> tronco,bn::vector<bn::sprite_ptr,60>& imagenes,bn::sprite_ptr& carta,int indices[4],int cant_cartas);

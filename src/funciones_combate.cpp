@@ -79,7 +79,8 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
    int indices_jugador[4]={0, 0,60,60};
 //                          a  b  c  d
    robar_carta(tronco_jugador,imagenes_jugador,jugador_superior,indices_jugador,7);
-   log_tronco(tronco_jugador,indices_jugador);
+   BN_LOG(verificar_mano_inicial(tronco_jugador, indices_jugador));
+   //log_tronco(tronco_jugador,indices_jugador);
    //barajear(tronco_jugador,indices_jugador,2,random);
 //    log_tronco(tronco_jugador);
    
@@ -281,9 +282,17 @@ void barajear(bn::vector<carta,60>& tronco,int indices[4],int n,bn::random rando
 
 }
 
-// void verificar_mano inicial(bn::vector<carta,60> tronco, int indices[4]){
+bool verificar_mano_inicial(bn::vector<carta,60> tronco, int indices[4]){
+    int basicos = 0;
+    
+    for(int n = indices[0];n<indices[1];n++){
+        if(es_basico(tronco[n])) basicos++;
+    }
 
-// }
+    if(basicos>0) return true;
+
+    return false;
+}
 
 void cambio(bn::vector<carta,60>& tronco,int a, int b){
 
@@ -398,7 +407,6 @@ void descarte_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& i
     agrega_carta(tronco,imagenes,retirado,indices,3);
 }
 
-//test
 
 /*
 
