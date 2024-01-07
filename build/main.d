@@ -134,6 +134,9 @@ main.o: \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/carta.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_diccionario.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_mostrar_informacion.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/../../common/include/common_variable_8x8_sprite_font.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_common_variable_8x8_font.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_cartas.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/carta.h
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_core.h:
@@ -270,5 +273,8 @@ main.o: \
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/carta.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_diccionario.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_mostrar_informacion.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/../../common/include/common_variable_8x8_sprite_font.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_common_variable_8x8_font.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_cartas.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/carta.h:

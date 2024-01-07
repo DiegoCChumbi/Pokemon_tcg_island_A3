@@ -6,16 +6,16 @@ bool es_basico(carta _carta){
     switch (_carta.obtener_tipo1())
     {
     case 1:{
-        return diccionario_normal(_carta).stage;
+        return diccionario_normal(_carta)->stage;
     }
     case 2:{
-        return diccionario_normal_habilidad(_carta).stage;
+        return diccionario_normal_habilidad(_carta)->stage;
     }
     case 3:{
-        return diccionario_v(_carta).stage;
+        return diccionario_v(_carta)->stage;
     }
     case 4:{
-        return diccionario_v_habilidad(_carta).stage;
+        return diccionario_v_habilidad(_carta)->stage;
     }
     default:
         break;
@@ -23,12 +23,53 @@ bool es_basico(carta _carta){
 
 }
 
-carta_full diccionario_normal(carta _carta){
+carta_full* obtener_informacion_completa(carta _carta){
+
+    switch (_carta.obtener_tipo1())
+    {
+    case 1:{
+        return diccionario_normal(_carta);
+    }
+    case 2:{
+        return diccionario_normal_habilidad(_carta);
+    }
+    case 3:{
+        return diccionario_v(_carta);
+    }
+    case 4:{
+        return diccionario_v_habilidad(_carta);
+    }
+    case 5:{
+        return diccionario_vstar(_carta);
+    }
+    case 6:{
+        return diccionario_vstar_habilidad(_carta);
+    }
+    case 7:{
+        return diccionario_vmax(_carta);
+    }
+    case 8:{
+        return diccionario_vmax_habilidad(_carta);
+    }
+    case 9:{
+        return diccionario_no_pokemon(_carta);
+    }
+    case 10:{
+        return diccionario_energias(_carta);
+    }
+    default:
+        break;
+    }
+
+}
+
+carta_full* diccionario_normal(carta _carta){
 
     bn::string<32> nombre = _carta.obtener_nombre();
 
-    carta_full carta;
-    carta.habilidad=false;
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+    carta->preevolucion = "Ninguno"; 
 
     switch (_carta.obtener_tipo2())
     {
@@ -46,28 +87,56 @@ carta_full diccionario_normal(carta _carta){
     }
     case 5:{        //fuego
         if(nombre == (bn::string<32>)"Oricorio"){
-            carta.stage = 0;
-            carta.ps = 90;
-            carta.debilidad = true;
+            carta->stage = 0;
+            carta->ps = 90;
+            carta->habilidad = true;
 
             bn::vector<int,10> ataque1;
             ataque1.push_back(5);
             ataque1.push_back(1);
-            carta.energias.push_back(ataque1);
+            carta->energias.push_back(ataque1);
 
-            carta.texto =   "Habilidad:     Leccion de Fervor\n"
-                            "Los ataques de los Pokemon de tu rival hacen\n"
-                            "20 puntos de daño menos a todos tus Pokemon\n"
-                            "Golpe Fusion (Despues de aplicar Debilidad y\n"
-                            "Resistencia). No puedes aplicar mas de 1 habilidad\n"
-                            "Leccion de Fervor a la vez\n"
-                            "       Gotas Brillantes\n"
-                            "Pon 5 contadores de daño en los Pokemon de tu\n"
-                            "rival de la manera que desees\n";
-            carta.arquetipo = "Golpe Fusion";
-            carta.debilidad = 2;
-            carta.resistencia = 0;
-            carta.retirada = 1;
+            bn::string<30> linea1 = "HAB: Leccion de Fervor";
+            bn::string<30> linea2 = "Los ataques de los";
+            bn::string<30> linea3 = "Pokemon de tu rival";
+            bn::string<30> linea4 = "hacen 20 puntos de";
+            bn::string<30> linea5 = "daño menos a todos";
+            bn::string<30> linea6 = "tus Pokemon Golpe";
+            bn::string<30> linea7 = "Fusión (Despues de";
+            bn::string<30> linea8 = "aplicar Debilidad y";
+            bn::string<30> linea9 = "Resistencia).No puedes";
+            bn::string<30> linea10= "aplicar mas de 1";
+            bn::string<30> linea11= "habilidad Lección de";
+            bn::string<30> linea12= "Fervor a la vez";
+
+            bn::string<30> linea13= "    Gotas Brillantes";
+            bn::string<30> linea14= "Pon 5 contadores de daño";
+            bn::string<30> linea15= "en los Pokemon de tu";
+            bn::string<30> linea16= "rival de la manera que";
+            bn::string<30> linea17= "desees.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+            carta->texto.push_back(linea8);
+            carta->texto.push_back(linea9);
+            carta->texto.push_back(linea10);
+            carta->texto.push_back(linea11);
+            carta->texto.push_back(linea12);
+            carta->texto.push_back(linea13);
+            carta->texto.push_back(linea14);
+            carta->texto.push_back(linea15);
+            carta->texto.push_back(linea16);
+            carta->texto.push_back(linea17);
+
+            carta->arquetipo = "Golpe Fusion";
+            carta->debilidad = 2;
+            carta->resistencia = 0;
+            carta->retirada = 1;
         }
         break;
     }
@@ -82,40 +151,60 @@ carta_full diccionario_normal(carta _carta){
     }
     case 9:{        //psiquico
         if(nombre == (bn::string<32>)"Meloetta"){
-            carta.stage = 0;
-            carta.ps = 90;
+            carta->stage = 0;
+            carta->ps = 90;
 
             bn::vector<int,10> ataque1;
             ataque1.push_back(9);
             ataque1.push_back(1);
-            carta.energias.push_back(ataque1);
+            carta->energias.push_back(ataque1);
 
-            carta.texto =     "        Eco Melodioso              x70\n"
-                        "Este ataque hace 70 puntos de daño por cada\n"
-                        "Energia Golpe Fusion unida a todos tus\n"
-                        "Pokemon.\n";
-            carta.arquetipo = "Golpe Fusion";
-            carta.debilidad = 10;
-            carta.resistencia = 6;
-            carta.retirada = 1;
+            bn::string<30> linea1 = "    Eco Melodioso  x70";
+            bn::string<30> linea2 = "Este ataque hace 70 ";
+            bn::string<30> linea3 = "puntos de daño por cada";
+            bn::string<30> linea4 = "Energia Golpe Fusion";
+            bn::string<30> linea5 = "unida a todos tus";
+            bn::string<30> linea6 = "Pokemon.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+
+            carta->arquetipo = "Golpe Fusion";
+            carta->debilidad = 10;
+            carta->resistencia = 6;
+            carta->retirada = 1;
         }else if(nombre == (bn::string<32>)"Deoxys"){
-            carta.stage = 0;
-            carta.ps = 120;
+            carta->stage = 0;
+            carta->ps = 120;
 
             bn::vector<int,10> ataque1;
             ataque1.push_back(1);
             ataque1.push_back(1);
             ataque1.push_back(1);
-            carta.energias.push_back(ataque1);
+            carta->energias.push_back(ataque1);
 
-            carta.texto =     "        Impulso Fotonico           80+\n"
-                        "Si este pokemon tiene alguna Energia Golpe\n"
-                        "Fusion unida a el, este ataque hace 80 de daño\n"
-                        "mas.\n";
-            carta.arquetipo = "Golpe";        //Si solo dice Golpe cuenta como fusion, brusco y fluido
-            carta.debilidad = 10;
-            carta.resistencia = 6;
-            carta.retirada = 1;
+            bn::string<30> linea1 = "    Impulso Fotonico 80+";
+            bn::string<30> linea2 = "Si este Pokemon tiene";
+            bn::string<30> linea3 = "alguna Energia Golpe";
+            bn::string<30> linea4 = "Fusión unida a el, este";
+            bn::string<30> linea5 = "ataque hace 80 de daño";
+            bn::string<30> linea6 = "mas.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+
+            carta->arquetipo = "Golpe";        //Si solo dice Golpe cuenta como fusion, brusco y fluido
+            carta->debilidad = 10;
+            carta->resistencia = 6;
+            carta->retirada = 1;
         }
         break;
     }
@@ -130,12 +219,13 @@ carta_full diccionario_normal(carta _carta){
 
 }
 
-carta_full diccionario_normal_habilidad(carta _carta){
+carta_full* diccionario_normal_habilidad(carta _carta){
 
     bn::string<32> nombre = _carta.obtener_nombre();
 
-    carta_full carta;
-    carta.habilidad=false;
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+    carta->preevolucion = "Ninguno";
 
     switch (_carta.obtener_tipo2())
     {
@@ -177,12 +267,13 @@ carta_full diccionario_normal_habilidad(carta _carta){
 
 }
 
-carta_full diccionario_v(carta _carta){
+carta_full* diccionario_v(carta _carta){
 
     bn::string<32> nombre = _carta.obtener_nombre();
 
-    carta_full carta;
-    carta.habilidad=false;
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+    carta->preevolucion = "Ninguno"; 
 
     switch (_carta.obtener_tipo2())
     {
@@ -212,29 +303,50 @@ carta_full diccionario_v(carta _carta){
     }
     case 9:{        //psiquico
         if(nombre == (bn::string<32>)"Mew V"){
-            carta.stage = 0;
-            carta.ps = 180;
+            carta->stage = 0;
+            carta->ps = 180;
             
             bn::vector<int,10> ataque1;
             ataque1.push_back(9);
-            carta.energias.push_back(ataque1);
+            carta->energias.push_back(ataque1);
             bn::vector<int,10> ataque2;
             ataque2.push_back(9);
             ataque2.push_back(1);
-            carta.energias.push_back(ataque2);
+            carta->energias.push_back(ataque2);
 
-            carta.texto =   "        Mezcla de Energia\n"
-                            "Busca en tu baraja 1 carta de Energia y\n"
-                            "unela a 1 de tus Pokemon Golpe Fusion. \n"
-                            "Despues, baraja las cartas de tu baraja.\n"
-                            "       Salto Psiquico                  70\n"
-                            "Puedes poner este Pokemon y todas las \n"
-                            "cartas unidas a el en tu baraja y barajar \n"
-                            "todas la cartas\n";
-            carta.arquetipo = "Golpe Fusion";
-            carta.debilidad = 10;
-            carta.resistencia = 6;
-            carta.retirada = 0;
+            bn::string<30> linea1 = "    Mezcla de Energia";
+            bn::string<30> linea2 = "Busca en tu baraja 1";
+            bn::string<30> linea3 = "carta de Energia y";
+            bn::string<30> linea4 = "únela a 1 de tus Pokemon";
+            bn::string<30> linea5 = "Golpe Fusión. Después,";
+            bn::string<30> linea6 = "baraja las cartas de tu";
+            bn::string<30> linea7 = "baraja.";
+
+            bn::string<30> linea8 = "    Salto Psíquico  70";
+            bn::string<30> linea9 = "Puedes poner este";
+            bn::string<30> linea10= "Pokemon y todas las";
+            bn::string<30> linea11= "cartas unidas a el en tu";
+            bn::string<30> linea12= "baraja y barajar todas";
+            bn::string<30> linea13= "las cartas.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+            carta->texto.push_back(linea8);
+            carta->texto.push_back(linea9);
+            carta->texto.push_back(linea10);
+            carta->texto.push_back(linea11);
+            carta->texto.push_back(linea12);
+            carta->texto.push_back(linea13);
+
+            carta->arquetipo = "Golpe Fusion";
+            carta->debilidad = 10;
+            carta->resistencia = 6;
+            carta->retirada = 0;
         }
         break;
     }
@@ -249,12 +361,299 @@ carta_full diccionario_v(carta _carta){
 
 }
 
-carta_full diccionario_v_habilidad(carta _carta){
+carta_full* diccionario_v_habilidad(carta _carta){
 
     bn::string<32> nombre = _carta.obtener_nombre();
 
-    carta_full carta;
-    carta.habilidad=false;
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+    carta->preevolucion = "Ninguno"; 
+
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electrico
+        break;
+    }
+    case 5:{        //fuego
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psiquico
+        break;
+    }
+    case 10:{       //sinietro
+        break;
+    }
+    default:
+        break;
+    }
+
+    return carta;
+
+}
+
+carta_full* diccionario_vstar(carta _carta){
+
+    bn::string<32> nombre = _carta.obtener_nombre();
+
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+    //siempre definir preevolucion
+
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electrico
+        break;
+    }
+    case 5:{        //fuego
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psiquico
+        break;
+    }
+    case 10:{       //sinietro
+        break;
+    }
+    default:
+        break;
+    }
+
+    return carta;
+
+}
+
+carta_full* diccionario_vstar_habilidad(carta _carta){
+
+    bn::string<32> nombre = _carta.obtener_nombre();
+
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+    //siempre definir preevolucion
+
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electrico
+        break;
+    }
+    case 5:{        //fuego
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psiquico
+        break;
+    }
+    case 10:{       //sinietro
+        break;
+    }
+    default:
+        break;
+    }
+
+    return carta;
+
+}
+
+carta_full* diccionario_vmax(carta _carta){
+
+    bn::string<32> nombre = _carta.obtener_nombre();
+
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+    //siempre definir preevolucion
+
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electrico
+        break;
+    }
+    case 5:{        //fuego
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psiquico
+        break;
+    }
+    case 10:{       //sinietro
+        break;
+    }
+    default:
+        break;
+    }
+
+    return carta;
+
+}
+
+carta_full* diccionario_vmax_habilidad(carta _carta){
+
+    bn::string<32> nombre = _carta.obtener_nombre();
+
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+    //siempre definir preevolucion
+
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electrico
+        break;
+    }
+    case 5:{        //fuego
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psiquico
+        break;
+    }
+    case 10:{       //sinietro
+        break;
+    }
+    default:
+        break;
+    }
+
+    return carta;
+
+}
+
+carta_full* diccionario_no_pokemon(carta _carta){
+
+    bn::string<32> nombre = _carta.obtener_nombre();
+
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
+
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electrico
+        break;
+    }
+    case 5:{        //fuego
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psiquico
+        break;
+    }
+    case 10:{       //sinietro
+        break;
+    }
+    default:
+        break;
+    }
+
+    return carta;
+
+}
+
+carta_full* diccionario_energias(carta _carta){
+
+    bn::string<32> nombre = _carta.obtener_nombre();
+
+    carta_full* carta = new carta_full();
+    carta->habilidad = false;
 
     switch (_carta.obtener_tipo2())
     {

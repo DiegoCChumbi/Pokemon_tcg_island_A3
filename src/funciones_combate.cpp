@@ -88,6 +88,7 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
 //    BN_LOG("b:",indices_jugador[1]);
 
    while(true){
+        mostrar_informacion(tronco_jugador[11]);
         bn::core::update();
    }
 
