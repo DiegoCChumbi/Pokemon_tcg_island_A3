@@ -22,6 +22,9 @@ funciones_diccionario.o: \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_iterator.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_vector.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_vector_fwd.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_log.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_config_log.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_log_backend.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/carta.h
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_diccionario.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h:
@@ -45,4 +48,7 @@ funciones_diccionario.o: \
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_iterator.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_vector.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_vector_fwd.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_log.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_config_log.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_log_backend.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/carta.h:

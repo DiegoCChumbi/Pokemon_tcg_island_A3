@@ -3,6 +3,7 @@
 
 #include "bn_string.h"
 #include "bn_vector.h"
+#include "bn_log.h"
 
 #include "carta.h"
 

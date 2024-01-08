@@ -79,7 +79,7 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
    int indices_jugador[4]={0, 0,60,60};
 //                          a  b  c  d
    robar_carta(tronco_jugador,imagenes_jugador,jugador_superior,indices_jugador,7);
-   BN_LOG(verificar_mano_inicial(tronco_jugador, indices_jugador));
+   //BN_LOG(verificar_mano_inicial(tronco_jugador, indices_jugador));
    //log_tronco(tronco_jugador,indices_jugador);
    //barajear(tronco_jugador,indices_jugador,2,random);
 //    log_tronco(tronco_jugador);
@@ -88,7 +88,8 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
 //    BN_LOG("b:",indices_jugador[1]);
 
    while(true){
-        mostrar_informacion(tronco_jugador[11]);
+        BN_LOG(tronco_jugador[11].obtener_nombre());
+        if(bn::keypad::l_pressed()) mostrar_informacion(tronco_jugador[11]);
         bn::core::update();
    }
 

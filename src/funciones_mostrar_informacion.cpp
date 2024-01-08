@@ -6,8 +6,6 @@ void mostrar_informacion(carta _carta){
 
     bn::vector<bn::sprite_ptr, 80> text_sprites;
 
-    BN_LOG(actual->stage);
-
     if(_carta.obtener_tipo1()>0 and _carta.obtener_tipo1()<9){
         int y = -50;
 
@@ -46,21 +44,31 @@ void mostrar_informacion(carta _carta){
 
     }
 
-    while(true){        //cambiar cuando L sea soltado
-         while(bn::keypad::down_held()){
+    int y_max = -4;
+    int y_min = -actual->texto.size()*14 + 81;      
+    int y_act = -6;
+
+    BN_LOG("y_min es: ",-251 + actual->texto.size()*14);
+
+    while(!bn::keypad::l_released()){        //cambiar cuando L sea soltado
+         while(bn::keypad::down_held() and y_act<y_max){ // and y_act<y_max
             for(bn::sprite_ptr linea : text_sprites){
                 linea.set_y(linea.y()+1);
             }
+            y_act++;
+            BN_LOG(y_act);
             bn::core::update();
         }
 
-        while(bn::keypad::up_held()){
+        while(bn::keypad::up_held() and y_act>y_min){  //and y_act>y_min
             for(bn::sprite_ptr linea : text_sprites){
                 linea.set_y(linea.y()-1);
             }
+            y_act--;
+            BN_LOG(y_act);
             bn::core::update();
         }
-
+        BN_LOG(y_act);
         bn::core::update();
     }   
 
