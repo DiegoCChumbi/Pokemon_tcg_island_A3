@@ -167,6 +167,46 @@ void mostrar_informacion(carta _carta){
         }   
 
         delete actual;
+    }else if(_carta.obtener_tipo1() == 9 or _carta.obtener_tipo1() == 10){
+        int y = -50;
+
+        bn::sprite_text_generator small_variable_text_generator(common::variable_8x8_sprite_font);
+        small_variable_text_generator.set_left_alignment();
+
+        small_variable_text_generator.generate(-6,-75,_carta.obtener_nombre(),text_sprites);
+
+        for(bn::string<30> text_line : actual->texto){
+            small_variable_text_generator.generate(-6, y, text_line, text_sprites);
+            y += 14;
+        }
+
+        for(bn::sprite_ptr sprite : text_sprites){
+            sprite.set_bg_priority(1);
+        }
+
+        int y_max = -4;
+        int y_min = -actual->texto.size()*14 + 100;      
+        int y_act = -6;
+
+        while(!bn::keypad::l_released()){        //cambiar cuando L sea soltado
+            while(bn::keypad::down_held() and y_act<y_max){ // and y_act<y_max
+                for(bn::sprite_ptr linea : text_sprites){
+                    linea.set_y(linea.y()+1);
+                }
+                y_act++;
+                bn::core::update();
+            }
+
+            while(bn::keypad::up_held() and y_act>y_min){  //and y_act>y_min
+                for(bn::sprite_ptr linea : text_sprites){
+                    linea.set_y(linea.y()-1);
+                }
+                y_act--;
+                bn::core::update();
+            }
+            bn::core::update();
+        }   
+
     }
 
 }

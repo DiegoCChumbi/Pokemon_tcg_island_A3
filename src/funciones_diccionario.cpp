@@ -705,34 +705,199 @@ carta_full* diccionario_no_pokemon(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case 1:{        //objeto
+        if(nombre == (bn::string<32>)"Pase de Combate VIP"){
+            bn::string<30> linea1 = "Puedes jugar esta carta";
+            bn::string<30> linea2 = "solo durante tu primer";
+            bn::string<30> linea3 = "turno.";
+            bn::string<30> linea4 = " ";
+            bn::string<30> linea5 = "Busca en tu baraja hasta";
+            bn::string<30> linea6 = "2 Pokémon Básicos y";
+            bn::string<30> linea7 = "ponlos en tu Banca.";
+            bn::string<30> linea8 = "Después, baraja las";
+            bn::string<30> linea9 = "cartas de tu baraja.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+            carta->texto.push_back(linea8);
+            carta->texto.push_back(linea9);
+
+        }else if(nombre == (bn::string<32>)"Cinturón Elección"){
+            bn::string<30> linea1 = "Los ataques del Pokémon";
+            bn::string<30> linea2 = "al que esté unida esa";
+            bn::string<30> linea3 = "carta hacen 30 puntos de";
+            bn::string<30> linea4 = "daño mas al Pokémon V";
+            bn::string<30> linea5 = "Activo de tu rival (antes";
+            bn::string<30> linea6 = "de aplicar Debilida y ";
+            bn::string<30> linea7 = "Resistencia.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+        }else if(nombre == (bn::string<32>)"Cramobot"){
+            bn::string<30> linea1 = "Puedes usar esta carta";
+            bn::string<30> linea2 = "solo si descartas otra";
+            bn::string<30> linea3 = "carta de Objeto de tu";
+            bn::string<30> linea4 = "mano.";
+            bn::string<30> linea5 = " ";
+            bn::string<30> linea6 = "Lanza 1 moneda. Si sale";
+            bn::string<30> linea7 = "cara, busca en tu baraja";
+            bn::string<30> linea8 = "1 carta y ponla en tu";
+            bn::string<30> linea9 = "mano. Después, baraja las";
+            bn::string<30> linea10= "cartas de tu baraja";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+            carta->texto.push_back(linea8);
+            carta->texto.push_back(linea9);
+            carta->texto.push_back(linea10);
+        }else if(nombre == (bn::string<32>)"Cuerda Huida"){
+            bn::string<30> linea1 = "Cada jugador cambia a";
+            bn::string<30> linea2 = "su Pokémon Activo por 1";
+            bn::string<30> linea3 = "de sus Pokémon en Banca.";
+            bn::string<30> linea4 = "(Tu rival lo cambia";
+            bn::string<30> linea5 = "primero. Si algún jugador";
+            bn::string<30> linea6 = "no tiene a un Pokémon en";
+            bn::string<30> linea7 = "Banca, no cambiará a su";
+            bn::string<30> linea8 = "Pokémon.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+            carta->texto.push_back(linea8);
+        }else if(nombre == (bn::string<32>)"Cristal Niebla"){
+            bn::string<30> linea1 = "Busca en tu baraja 1";
+            bn::string<30> linea2 = "carta de Energía ";
+            bn::string<30> linea3 = "Psíquica o 1 Pokémon";
+            bn::string<30> linea4 = "Psíquico Básico, enseña";
+            bn::string<30> linea5 = "esa carta y ponla en tu";
+            bn::string<30> linea6 = "mano. Después, baraja";
+            bn::string<30> linea7 = "las cartas de tu baraja.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+        }else if(nombre == (bn::string<32>)"Caramelo Energético"){
+            bn::string<30> linea1 = "Durante este turno,";
+            bn::string<30> linea2 = "los ataques de tus";
+            bn::string<30> linea3 = "Pokémon Golpe Fusión";
+            bn::string<30> linea4 = "hacen  30 puntos de ";
+            bn::string<30> linea5 = "daño más al Pokémon";
+            bn::string<30> linea6 = "Activo de tu rival";
+            bn::string<30> linea7 = "(antes de aplicar"; 
+            bn::string<30> linea8 = "Debilidad y Resistencia)."; 
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+            carta->texto.push_back(linea8);
+        }else if(nombre == (bn::string<32>)"Cambio"){
+            bn::string<30> linea1 = "Cambia 1 de tus";
+            bn::string<30> linea2 = "Pokémon de la Banca";
+            bn::string<30> linea3 = "con tus Pokémon";
+            bn::string<30> linea4 = "Activo.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+        }else if(nombre == (bn::string<32>)"Ultra Ball"){
+            bn::string<30> linea1 = "Descarta 2 cartas de tu";
+            bn::string<30> linea2 = "mano. (Si no puedes";
+            bn::string<30> linea3 = "descartar 2 cartas, no";
+            bn::string<30> linea4 = "puedes jugar esta carta.)";
+            bn::string<30> linea5 = "Busca en tu baraja un";
+            bn::string<30> linea6 = "Pokémon, enséñalo y";
+            bn::string<30> linea7 = "ponlo en tu mano.";
+            bn::string<30> linea8 = "Baraja las cartas de tu";
+            bn::string<30> linea9 = "baraja después.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+            carta->texto.push_back(linea8);
+            carta->texto.push_back(linea9);
+        }
         break;
     }
-    case 2:{        //agua
+    case 2:{        //partidario
+        if(nombre == (bn::string<32>)"Órdenes de Jefes"){
+            bn::string<30> linea1 = "Cambia 1 de los Pokemon";
+            bn::string<30> linea2 = "en Banca de tu rival";
+            bn::string<30> linea3 = "por su Pokémon activo.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+        }else if(nombre == (bn::string<32>)"Brillo de Camila"){
+            bn::string<30> linea1 = "Escoje hasta 2 Pokémon";
+            bn::string<30> linea2 = "Golpe Fusión. Para cada";
+            bn::string<30> linea3 = "uno de esos Pokémon,";
+            bn::string<30> linea4 = "busca en tu baraja 1";
+            bn::string<30> linea5 = "carta de Energia Golpe";
+            bn::string<30> linea6 = "Fusión y únela a ese";
+            bn::string<30> linea7 = "Pokémon. Después, baraja";
+            bn::string<30> linea8 = "las cartas de tu baraja.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+            carta->texto.push_back(linea8);
+        }
         break;
     }
-    case 3:{        //dragon
-        break;
-    }
-    case 4:{        //electrico
-        break;
-    }
-    case 5:{        //fuego
-        break;
-    }
-    case 6:{        //lucha
-        break;
-    }
-    case 7:{        //metal
-        break;
-    }
-    case 8:{        //planta
-        break;
-    }
-    case 9:{        //psiquico
-        break;
-    }
-    case 10:{       //sinietro
+    case 3:{        //estadio
+        if(nombre == (bn::string<32>)"Viejo Cementerio"){
+            bn::string<30> linea1 = "Cada vez que algún";
+            bn::string<30> linea2 = "jugador una 1 carta de";
+            bn::string<30> linea3 = "Energía de su mano a 1";
+            bn::string<30> linea4 = "de sus Pokémon no ";
+            bn::string<30> linea5 = "Psíquico, pon 2";
+            bn::string<30> linea6 = "coontadores de daño";
+            bn::string<30> linea7 = "en ese Pokémon.";
+
+            carta->texto.push_back(linea1);
+            carta->texto.push_back(linea2);
+            carta->texto.push_back(linea3);
+            carta->texto.push_back(linea4);
+            carta->texto.push_back(linea5);
+            carta->texto.push_back(linea6);
+            carta->texto.push_back(linea7);
+        }
         break;
     }
     default:
@@ -777,6 +942,11 @@ carta_full* diccionario_energias(carta _carta){
         break;
     }
     case 9:{        //psiquico
+        bn::string<30> linea1 = "Energía Psíquica";
+        bn::string<30> linea2 = "Básica";
+
+        carta->texto.push_back(linea1);
+        carta->texto.push_back(linea2);
         break;
     }
     case 10:{       //sinietro

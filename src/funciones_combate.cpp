@@ -89,7 +89,7 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
 
    while(true){
         BN_LOG(tronco_jugador[2].obtener_nombre());
-        if(bn::keypad::l_pressed()) mostrar_informacion(tronco_jugador[11]);
+        if(bn::keypad::l_pressed()) mostrar_informacion(tronco_jugador[12]);
         bn::core::update();
    }
 
