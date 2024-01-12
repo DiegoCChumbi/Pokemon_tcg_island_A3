@@ -4,7 +4,7 @@
 
 void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_oponente,bn::random random){
 
-    bn::regular_bg_ptr fondo = bn::regular_bg_items::fondo_de_juego.create_bg(0,0);
+    bn::regular_bg_ptr fondo = bn::regular_bg_items::playmat.create_bg(0,0);
 
     //Defino vector que contenga las imagenes
     bn::vector<bn::sprite_ptr,60> imagenes_jugador;
@@ -88,7 +88,7 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
 //    BN_LOG("b:",indices_jugador[1]);
 
    while(true){
-        BN_LOG(tronco_jugador[11].obtener_nombre());
+        BN_LOG(tronco_jugador[2].obtener_nombre());
         if(bn::keypad::l_pressed()) mostrar_informacion(tronco_jugador[11]);
         bn::core::update();
    }

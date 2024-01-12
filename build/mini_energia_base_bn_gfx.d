@@ -1,0 +1,1 @@
+mini_energia_base_bn_gfx.o: mini_energia_base_bn_gfx.s

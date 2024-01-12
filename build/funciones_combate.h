@@ -5,7 +5,7 @@
 
 #include "bn_regular_bg_ptr.h"
 #include "bn_affine_bg_item.h"
-#include "bn_regular_bg_items_fondo_de_juego.h"
+#include "bn_regular_bg_items_playmat.h"
 #include "bn_vector.h"
 #include "bn_sprite_text_generator.h"
 #include "common_variable_8x16_sprite_font.h"

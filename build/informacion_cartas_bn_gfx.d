@@ -1,0 +1,1 @@
+informacion_cartas_bn_gfx.o: informacion_cartas_bn_gfx.s

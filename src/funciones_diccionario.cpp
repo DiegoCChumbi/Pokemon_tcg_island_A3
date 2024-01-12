@@ -218,12 +218,12 @@ carta_full* diccionario_normal_habilidad(carta _carta){
             bn::string<30> linea10= "aplicar mas de 1";
             bn::string<30> linea11= "habilidad Lección de";
             bn::string<30> linea12= "Fervor a la vez";
-
-            bn::string<30> linea13= "    Gotas Brillantes";
-            bn::string<30> linea14= "Pon 5 contadores de daño";
-            bn::string<30> linea15= "en los Pokémon de tu";
-            bn::string<30> linea16= "rival de la manera que";
-            bn::string<30> linea17= "desees.";
+            bn::string<30> linea13= "---";
+            bn::string<30> linea14= "    Gotas Brillantes";
+            bn::string<30> linea15= "Pon 5 contadores de daño";
+            bn::string<30> linea16= "en los Pokémon de tu";
+            bn::string<30> linea17= "rival de la manera que";
+            bn::string<30> linea18= "desees.";
 
             carta->texto.push_back(linea1);
             carta->texto.push_back(linea2);
@@ -242,6 +242,7 @@ carta_full* diccionario_normal_habilidad(carta _carta){
             carta->texto.push_back(linea15);
             carta->texto.push_back(linea16);
             carta->texto.push_back(linea17);
+            carta->texto.push_back(linea18);
 
             carta->arquetipo = "Golpe Fusion";
             carta->debilidad = 2;
@@ -327,13 +328,13 @@ carta_full* diccionario_v(carta _carta){
             bn::string<30> linea5 = "Golpe Fusión. Después,";
             bn::string<30> linea6 = "baraja las cartas de tu";
             bn::string<30> linea7 = "baraja.";
-
-            bn::string<30> linea8 = "    Salto Psíquico  70";
-            bn::string<30> linea9 = "Puedes poner este";
-            bn::string<30> linea10= "Pokémon y todas las";
-            bn::string<30> linea11= "cartas unidas a el en tu";
-            bn::string<30> linea12= "baraja y barajar todas";
-            bn::string<30> linea13= "las cartas.";
+            bn::string<30> linea8 = "---";
+            bn::string<30> linea9 = "    Salto Psíquico  70";
+            bn::string<30> linea10= "Puedes poner este";
+            bn::string<30> linea11= "Pokémon y todas las";
+            bn::string<30> linea12= "cartas unidas a el en tu";
+            bn::string<30> linea13= "baraja y barajar todas";
+            bn::string<30> linea14= "las cartas.";
 
             carta->texto.push_back(linea1);
             carta->texto.push_back(linea2);
@@ -348,6 +349,7 @@ carta_full* diccionario_v(carta _carta){
             carta->texto.push_back(linea11);
             carta->texto.push_back(linea12);
             carta->texto.push_back(linea13);
+            carta->texto.push_back(linea14);
 
             carta->arquetipo = "Golpe Fusion";
             carta->debilidad = 10;
@@ -415,10 +417,10 @@ carta_full* diccionario_v_habilidad(carta _carta){
             bn::string<30> linea6 = "en tu mano como Pokémon";
             bn::string<30> linea7 = "Golpe Fusión tengas en";
             bn::string<30> linea8 = "juego.";
-
-            bn::string<30> linea9 = "     Tecno Shock  210";
-            bn::string<30> linea10= "Durante tu próximo,este";
-            bn::string<30> linea11= "Pokémon no puede atacar.";
+            bn::string<30> linea9 = "---";
+            bn::string<30> linea10= "     Tecno Shock  210";
+            bn::string<30> linea11= "Durante tu próximo,este";
+            bn::string<30> linea12= "Pokémon no puede atacar.";
 
             carta->texto.push_back(linea1);
             carta->texto.push_back(linea2);
@@ -431,6 +433,7 @@ carta_full* diccionario_v_habilidad(carta _carta){
             carta->texto.push_back(linea9);
             carta->texto.push_back(linea10);
             carta->texto.push_back(linea11);
+            carta->texto.push_back(linea12);
 
             carta->arquetipo = "Golpe Fusion";
             carta->debilidad = 10;
@@ -606,13 +609,13 @@ carta_full* diccionario_vmax(carta _carta){
             bn::string<30> linea3 = "de tus Pokémon Golpe";
             bn::string<30> linea4 = "Fusión en Banca y úsalo";
             bn::string<30> linea5 = "para este ataque.";
-
-            bn::string<30> linea6 = "   Maximilagro     130";
-            bn::string<30> linea7 = "El daño de este ataque";
-            bn::string<30> linea8 = "no se ve afectado por";
-            bn::string<30> linea9 = "ningun efecto en el";
-            bn::string<30> linea10= "Pokémon Activo de tu";
-            bn::string<30> linea11= "rival";
+            bn::string<30> linea6 = "---";
+            bn::string<30> linea7 = "   Maximilagro     130";
+            bn::string<30> linea8 = "El daño de este ataque";
+            bn::string<30> linea9 = "no se ve afectado por";
+            bn::string<30> linea10= "ningun efecto en el";
+            bn::string<30> linea11= "Pokémon Activo de tu";
+            bn::string<30> linea12= "rival";
 
             carta->texto.push_back(linea1);
             carta->texto.push_back(linea2);
@@ -625,6 +628,7 @@ carta_full* diccionario_vmax(carta _carta){
             carta->texto.push_back(linea9);
             carta->texto.push_back(linea10);
             carta->texto.push_back(linea11);
+            carta->texto.push_back(linea12);
 
             carta->arquetipo = "Golpe Fusion";
             carta->debilidad = 10;
