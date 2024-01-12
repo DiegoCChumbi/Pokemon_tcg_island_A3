@@ -1,6 +1,6 @@
 funciones_cartas.o: \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/src/funciones_cartas.cpp \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_cartas.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_cartas.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_ptr.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_compare.h \
@@ -92,7 +92,7 @@ funciones_cartas.o: \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_energia_planta.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_energia_psiquico.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_energia_siniestro.h
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/funciones_cartas.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_cartas.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_ptr.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_compare.h:

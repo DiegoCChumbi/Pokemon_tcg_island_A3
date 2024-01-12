@@ -1,6 +1,6 @@
 carta.o: \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/src/carta.cpp \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/carta.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sstream.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed_fwd.h \
@@ -20,7 +20,7 @@ carta.o: \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_utility.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_compare.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_iterator.h
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/carta.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sstream.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed_fwd.h:
