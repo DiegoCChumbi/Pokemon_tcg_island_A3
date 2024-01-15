@@ -4,8 +4,12 @@
 #include "bn_string.h"
 #include "bn_vector.h"
 #include "bn_log.h"
+#include "bn_sprite_ptr.h"
 
 #include "carta.h"
+
+//imagenes full
+#include "bn_sprite_items_mew_v.h"
 
 typedef struct carta_full{
     int stage;
@@ -20,7 +24,7 @@ typedef struct carta_full{
     int retirada;
 }carta_full;
 
-bool es_basico(carta carta);
+bool es_basico(carta _carta);
 
 carta_full* obtener_informacion_completa(carta _carta);
 
@@ -43,5 +47,15 @@ carta_full* diccionario_vmax_habilidad(carta _carta);
 carta_full* diccionario_no_pokemon(carta _carta);
 
 carta_full* diccionario_energias(carta _carta);
+
+bn::sprite_ptr obtener_imagen(carta _carta,int x,int y);
+
+// bn::sprite_ptr obtener_imagen_normal(carta _carta);
+
+bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y);
+
+// bn::sprite_ptr obtener_imagen_vstar(carta _carta);
+
+// bn::sprite_ptr obtener_imagen_vmax(carta _carta);
 
 #endif // FUNCIONES_DICCIONARIO

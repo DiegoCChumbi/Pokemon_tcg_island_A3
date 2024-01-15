@@ -23,6 +23,7 @@
 #include "funciones_diccionario.h"
 #include "carta.h"
 #include "funciones_mini_energias.h"
+#include "funciones_cartas_full.h"
 
 void mostrar_informacion(carta _carta);
 bn::vector<bn::sprite_ptr,10> imprime_energias(bn::vector<int,10> requerimientos,int x,int y);

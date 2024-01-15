@@ -959,3 +959,85 @@ carta_full* diccionario_energias(carta _carta){
     return carta;
 
 }
+
+bn::sprite_ptr obtener_imagen(carta _carta,int x,int y){
+    switch (_carta.obtener_tipo1())
+    {
+    // case 1:
+    // case 2:{
+    //     return obtener_imagen_normal(_carta);
+    // }
+    case 3:
+    case 4:{
+        return obtener_imagen_v(_carta,x,y);
+    }
+    // case 5:
+    // case 6:{
+    //     return obtener_imagen_vstar(_carta);
+    // }
+    // case 7:
+    // case 8:{
+    //     return obtener_imagen_vmax(_carta);
+    // }
+    // case 9:{
+    //     return obtener_imagen_no_pokemon(_carta);
+    // }
+    default:
+        break;
+    }
+}
+
+// bn::sprite_ptr obtener_imagen_normal(carta _carta){
+
+// }
+
+bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y){
+    bn::string<32> nombre = _carta.obtener_nombre();
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electricidad
+        break;
+    }
+    case 5:{        //fuego
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psquico
+        if(nombre == (bn::string<32>)"Mew V"){
+            bn::sprite_ptr imagen = bn::sprite_items::mew_v.create_sprite(x,y+64);
+            return imagen;
+        }
+        break;
+    }
+    case 10:{       //siniestro
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+// bn::sprite_ptr obtener_imagen_vstar(carta _carta){
+
+// }
+
+// bn::sprite_ptr obtener_imagen_vmax(carta _carta){
+
+// }

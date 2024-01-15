@@ -25,7 +25,24 @@ funciones_diccionario.o: \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_log.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_config_log.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_log_backend.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_ptr.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_optional.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_memory_alias.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_v.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_shape_size.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_bpp_mode.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_item.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_span.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_array.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_array_fwd.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_span_fwd.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_tile.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_compression_type.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_item.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_color.h
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_diccionario.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sstream.h:
@@ -51,4 +68,21 @@ funciones_diccionario.o: \
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_log.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_config_log.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_log_backend.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_ptr.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_optional.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_memory_alias.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_v.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_shape_size.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_bpp_mode.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_item.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_span.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_array.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_array_fwd.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_span_fwd.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_tile.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_compression_type.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_item.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_color.h:

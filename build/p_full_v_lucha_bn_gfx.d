@@ -1,0 +1,1 @@
+p_full_v_lucha_bn_gfx.o: p_full_v_lucha_bn_gfx.s

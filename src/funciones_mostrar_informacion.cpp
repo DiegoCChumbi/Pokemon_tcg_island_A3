@@ -18,6 +18,11 @@ void mostrar_informacion(carta _carta){
 
     bn::vector<bn::sprite_ptr, 80> text_sprites;
 
+    bn::vector<bn::sprite_ptr, 4> imagenes = dibuja_carta_full(_carta,-60,-70);
+    for(bn::sprite_ptr temp : imagenes){
+        temp.set_bg_priority(1);
+    }
+
     if(_carta.obtener_tipo1()>0 and _carta.obtener_tipo1()<9){
         int y = -35;
 
