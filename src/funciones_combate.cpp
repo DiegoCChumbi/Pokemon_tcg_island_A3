@@ -663,9 +663,15 @@ void tiempo_medio(bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,6
     bn::sprite_ptr flecha = bn::sprite_items::flecha.create_sprite(pos.front());
     flecha.set_bg_priority(2);
 
-    carta vacia("Vacio",0,0);
+    carta vacia(" ",0,0);
     carta* seleccionada = &vacia;
     bool actualizado = false;
+
+    bn::vector<bn::sprite_ptr,3> nombre_carta_selec;
+
+    bn::sprite_text_generator small_variable_text_generator(common::variable_8x8_sprite_font);
+    small_variable_text_generator.set_left_alignment();
+    small_variable_text_generator.generate(-118,70,(*seleccionada).obtener_nombre(),nombre_carta_selec);
 
     while(true){
 
@@ -713,11 +719,18 @@ void tiempo_medio(bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,6
                     seleccionada = &vacia;
                 }
             }
+            actualizado = false;
+            nombre_carta_selec.clear();
+            small_variable_text_generator.generate(-118,70,(*seleccionada).obtener_nombre(),nombre_carta_selec);
         }
 
         // if(bn::keypad::a_pressed()){
         //     BN_LOG(seleccionada->obtener_nombre());
         // }
+
+        if(bn::keypad::l_pressed()){
+            mostrar_informacion(*seleccionada);
+        }
 
         bn::core::update();
     }
