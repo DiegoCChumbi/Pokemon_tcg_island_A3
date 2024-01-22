@@ -1,0 +1,1 @@
+p_full_normal_siniestro_bn_gfx.o: p_full_normal_siniestro_bn_gfx.s

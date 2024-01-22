@@ -136,7 +136,7 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
 
    int indices_jugador[5]={0, 0, 0,60,60};
 //                         a  b  c  d  e
-   robar_carta(tronco_jugador,imagenes_jugador,jugador_superior,indices_jugador,7);
+   robar_carta(tronco_jugador,imagenes_jugador,jugador_superior,indices_jugador,11);
    //BN_LOG(verificar_mano_inicial(tronco_jugador, indices_jugador));
    //log_tronco(tronco_jugador,indices_jugador);
    //barajear(tronco_jugador,indices_jugador,2,random);
@@ -667,7 +667,7 @@ void tiempo_medio(bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,6
     carta* seleccionada = &vacia;
     bool actualizado = false;
 
-    bn::vector<bn::sprite_ptr,3> nombre_carta_selec;
+    bn::vector<bn::sprite_ptr,6> nombre_carta_selec;
 
     bn::sprite_text_generator small_variable_text_generator(common::variable_8x8_sprite_font);
     small_variable_text_generator.set_left_alignment();

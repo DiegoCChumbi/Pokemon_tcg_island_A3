@@ -1,0 +1,1 @@
+p_full_no_pokemon_estadio_bn_gfx.o: p_full_no_pokemon_estadio_bn_gfx.s

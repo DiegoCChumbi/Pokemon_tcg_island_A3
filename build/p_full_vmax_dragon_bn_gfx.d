@@ -1,0 +1,1 @@
+p_full_vmax_dragon_bn_gfx.o: p_full_vmax_dragon_bn_gfx.s

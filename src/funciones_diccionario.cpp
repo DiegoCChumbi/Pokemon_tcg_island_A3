@@ -963,10 +963,10 @@ carta_full* diccionario_energias(carta _carta){
 bn::sprite_ptr obtener_imagen(carta _carta,int x,int y){
     switch (_carta.obtener_tipo1())
     {
-    // case 1:
-    // case 2:{
-    //     return obtener_imagen_normal(_carta);
-    // }
+    case 1:
+    case 2:{
+        return obtener_imagen_normal(_carta,x,y);
+    }
     case 3:
     case 4:{
         return obtener_imagen_v(_carta,x,y);
@@ -975,24 +975,159 @@ bn::sprite_ptr obtener_imagen(carta _carta,int x,int y){
     // case 6:{
     //     return obtener_imagen_vstar(_carta);
     // }
-    // case 7:
-    // case 8:{
-    //     return obtener_imagen_vmax(_carta);
-    // }
-    // case 9:{
-    //     return obtener_imagen_no_pokemon(_carta);
-    // }
+    case 7:
+    case 8:{
+        return obtener_imagen_vmax(_carta,x,y);
+    }
+    case 9:{
+        return obtener_imagen_no_pokemon(_carta,x,y);
+    }
     default:
         break;
     }
 }
 
-// bn::sprite_ptr obtener_imagen_normal(carta _carta){
-
-// }
+bn::sprite_ptr obtener_imagen_normal(carta _carta,int x,int y){
+    bn::string<32> nombre = _carta.obtener_nombre();
+    int ajuste_pos = 50; 
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electricidad
+        break;
+    }
+    case 5:{        //fuego
+        if(nombre == (bn::string<32>)"Oricorio"){
+            bn::sprite_ptr imagen = bn::sprite_items::oricorio.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psquico
+        if(nombre == (bn::string<32>)"Meloetta"){
+            bn::sprite_ptr imagen = bn::sprite_items::meloetta.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Deoxys"){
+            bn::sprite_ptr imagen = bn::sprite_items::deoxys.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }
+        break;
+    }
+    case 10:{       //siniestro
+        break;
+    }
+    default:
+        break;
+    }
+}
 
 bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y){
     bn::string<32> nombre = _carta.obtener_nombre();
+    int ajuste_pos = 64; 
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //normal
+        break;
+    }
+    case 2:{        //agua
+        break;
+    }
+    case 3:{        //dragon
+        break;
+    }
+    case 4:{        //electricidad
+        break;
+    }
+    case 5:{        //fuego
+        break;
+    }
+    case 6:{        //lucha
+        break;
+    }
+    case 7:{        //metal
+        if(nombre == (bn::string<32>)"Genesect V"){
+            bn::sprite_ptr imagen = bn::sprite_items::genesect_v.create_sprite(x,y+ajuste_pos);
+            return imagen;
+        }
+        break;
+    }
+    case 8:{        //planta
+        break;
+    }
+    case 9:{        //psquico
+        if(nombre == (bn::string<32>)"Mew V"){
+            bn::sprite_ptr imagen = bn::sprite_items::mew_v.create_sprite(x,y+ajuste_pos);
+            return imagen;
+        }
+        break;
+    }
+    case 10:{       //siniestro
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+// bn::sprite_ptr obtener_imagen_vstar(carta _carta,int x,int y){
+    // bn::string<32> nombre = _carta.obtener_nombre();
+    // switch (_carta.obtener_tipo2())
+    // {
+    // case 1:{        //normal
+    //     break;
+    // }
+    // case 2:{        //agua
+    //     break;
+    // }
+    // case 3:{        //dragon
+    //     break;
+    // }
+    // case 4:{        //electricidad
+    //     break;
+    // }
+    // case 5:{        //fuego
+    //     break;
+    // }
+    // case 6:{        //lucha
+    //     break;
+    // }
+    // case 7:{        //metal
+    //     break;
+    // }
+    // case 8:{        //planta
+    //     break;
+    // }
+    // case 9:{        //psquico
+    //     break;
+    //     }
+    // case 10:{       //siniestro
+    //     break;
+    // }
+    // default:
+    //     break;
+    // }
+// }
+
+bn::sprite_ptr obtener_imagen_vmax(carta _carta,int x,int y){
+    bn::string<32> nombre = _carta.obtener_nombre();
+    int ajuste_pos = 64; 
     switch (_carta.obtener_tipo2())
     {
     case 1:{        //normal
@@ -1020,8 +1155,8 @@ bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y){
         break;
     }
     case 9:{        //psquico
-        if(nombre == (bn::string<32>)"Mew V"){
-            bn::sprite_ptr imagen = bn::sprite_items::mew_v.create_sprite(x,y+64);
+        if(nombre == (bn::string<32>)"Mew VMAX"){
+            bn::sprite_ptr imagen = bn::sprite_items::mew_vmax.create_sprite(x,y+ajuste_pos);
             return imagen;
         }
         break;
@@ -1034,10 +1169,57 @@ bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y){
     }
 }
 
-// bn::sprite_ptr obtener_imagen_vstar(carta _carta){
-
-// }
-
-// bn::sprite_ptr obtener_imagen_vmax(carta _carta){
-
-// }
+bn::sprite_ptr obtener_imagen_no_pokemon(carta _carta,int x,int y){
+    bn::string<32> nombre = _carta.obtener_nombre();
+    int ajuste_pos = 50; 
+    switch (_carta.obtener_tipo2())
+    {
+    case 1:{        //objeto
+        if(nombre == (bn::string<32>)"Pase de Combate VIP"){
+            bn::sprite_ptr imagen = bn::sprite_items::pase_de_combate_vip.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Cinturón Elección"){
+            bn::sprite_ptr imagen = bn::sprite_items::cinturon_eleccion.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Cramobot"){
+            bn::sprite_ptr imagen = bn::sprite_items::cramobot.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Cuerda Huida"){
+            bn::sprite_ptr imagen = bn::sprite_items::cuerda_huida.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Cristal Niebla"){
+            bn::sprite_ptr imagen = bn::sprite_items::cristal_niebla.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Caramelo Energético"){
+            bn::sprite_ptr imagen = bn::sprite_items::caramelo_energetico.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Cambio"){
+            bn::sprite_ptr imagen = bn::sprite_items::cambio.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Ultra Ball"){
+            bn::sprite_ptr imagen = bn::sprite_items::ultra_ball.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }
+        break;
+    }
+    case 2:{        //partidario
+        if(nombre == (bn::string<32>)"Órdenes de Jefes"){
+            bn::sprite_ptr imagen = bn::sprite_items::ordenes_de_jefes.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }else if(nombre == (bn::string<32>)"Brillo de Camila"){
+            bn::sprite_ptr imagen = bn::sprite_items::brillo_de_camila.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }
+        break;
+    }
+    case 3:{        //estadio
+        if(nombre == (bn::string<32>)"Viejo Cementerio"){
+            bn::sprite_ptr imagen = bn::sprite_items::viejo_cementerio.create_sprite(x-1,y+ajuste_pos);
+            return imagen;
+        }
+        break;
+    }
+    default:
+        break;
+    }
+}

@@ -37,11 +37,133 @@ bn::vector<bn::sprite_ptr,4> dibuja_carta_full(carta _carta,int x, int y){
    switch (tipo1)
    {
    case 1:
-   case 2:{
+   case 2:{         //normal
+        switch (tipo2)
+        {
+        case 1:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 2:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_agua;
 
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 3:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_dragon;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 4:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_electrico;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 5:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_fuego;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 6:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_lucha;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 7:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_metal;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 8:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_planta;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 9:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_psiquico;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 10:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_normal_siniestro;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_normal_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        default:
+            break;
+        }
+        break;
    }
    case 3:
-   case 4:{
+   case 4:{         //V
         switch (tipo2)
         {
         case 1:{
@@ -167,20 +289,177 @@ bn::vector<bn::sprite_ptr,4> dibuja_carta_full(carta _carta,int x, int y){
         break;
    }
    case 5:
-   case 6:{
-
+   case 6:{         //VSTAR
+        break;
    }
    case 7:
-   case 8:{
+   case 8:{         //VMAX
+        switch (tipo2)
+        {
+        case 1:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 2:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_agua;
 
-   }
-   case 9:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 3:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_dragon;
 
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 4:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_electrico;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 5:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_fuego;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 6:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_lucha;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 7:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_metal;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 8:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_planta;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 9:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_psiquico;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 10:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_vmax_siniestro;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_vmax_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        default:
+            break;
+        }
+        break;
    }
-   case 10:{        //aca los case terminan con return en lugar de break
-    
+   case 9:{     //no pokemon
+        switch (tipo2)
+        {
+        case 1:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_no_pokemon_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 2:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_no_pokemon_partidario;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_no_pokemon_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        case 3:{
+            const bn::sprite_palette_item& paleta = bn::sprite_palette_items::p_full_no_pokemon_estadio;
+
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::full_no_pokemon_base,n);
+                builder.set_position(x,y+64*n);
+                bn::sprite_ptr temp = builder.release_build();
+                temp.set_palette(paleta);
+                imagen.push_back(temp);
+            }
+            break;
+        }
+        default:
+            break;
+        }
+        break;
    }
-   default:
+    default:
     break;
    }
 

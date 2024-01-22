@@ -1,0 +1,1 @@
+viejo_cementerio_bn_gfx.o: viejo_cementerio_bn_gfx.s

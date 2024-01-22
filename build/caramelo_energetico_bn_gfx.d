@@ -1,0 +1,1 @@
+caramelo_energetico_bn_gfx.o: caramelo_energetico_bn_gfx.s

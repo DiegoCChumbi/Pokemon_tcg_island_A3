@@ -1,0 +1,1 @@
+brillo_de_camila_bn_gfx.o: brillo_de_camila_bn_gfx.s

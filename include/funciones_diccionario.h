@@ -10,6 +10,22 @@
 
 //imagenes full
 #include "bn_sprite_items_mew_v.h"
+#include "bn_sprite_items_mew_vmax.h"
+#include "bn_sprite_items_genesect_v.h"
+#include "bn_sprite_items_meloetta.h"
+#include "bn_sprite_items_deoxys.h"
+#include "bn_sprite_items_oricorio.h"
+#include "bn_sprite_items_pase_de_combate_vip.h"
+#include "bn_sprite_items_ordenes_de_jefes.h"
+#include "bn_sprite_items_cinturon_eleccion.h"
+#include "bn_sprite_items_cramobot.h"
+#include "bn_sprite_items_brillo_de_camila.h"
+#include "bn_sprite_items_cuerda_huida.h"
+#include "bn_sprite_items_cristal_niebla.h"
+#include "bn_sprite_items_viejo_cementerio.h"
+#include "bn_sprite_items_caramelo_energetico.h"
+#include "bn_sprite_items_cambio.h"
+#include "bn_sprite_items_ultra_ball.h"
 
 typedef struct carta_full{
     int stage;
@@ -50,12 +66,14 @@ carta_full* diccionario_energias(carta _carta);
 
 bn::sprite_ptr obtener_imagen(carta _carta,int x,int y);
 
-// bn::sprite_ptr obtener_imagen_normal(carta _carta);
+bn::sprite_ptr obtener_imagen_normal(carta _carta,int x,int y);
 
 bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y);
 
 // bn::sprite_ptr obtener_imagen_vstar(carta _carta);
 
-// bn::sprite_ptr obtener_imagen_vmax(carta _carta);
+bn::sprite_ptr obtener_imagen_vmax(carta _carta,int x,int y);
+
+bn::sprite_ptr obtener_imagen_no_pokemon(carta _carta,int x,int y);
 
 #endif // FUNCIONES_DICCIONARIO

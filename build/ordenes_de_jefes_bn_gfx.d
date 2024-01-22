@@ -1,0 +1,1 @@
+ordenes_de_jefes_bn_gfx.o: ordenes_de_jefes_bn_gfx.s

@@ -1,0 +1,1 @@
+p_full_vmax_siniestro_bn_gfx.o: p_full_vmax_siniestro_bn_gfx.s

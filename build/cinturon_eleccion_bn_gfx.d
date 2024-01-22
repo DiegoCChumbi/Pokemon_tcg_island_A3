@@ -1,0 +1,1 @@
+cinturon_eleccion_bn_gfx.o: cinturon_eleccion_bn_gfx.s

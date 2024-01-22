@@ -1,0 +1,1 @@
+pase_de_combate_vip_bn_gfx.o: pase_de_combate_vip_bn_gfx.s

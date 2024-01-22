@@ -1,0 +1,1 @@
+full_normal_base_bn_gfx.o: full_normal_base_bn_gfx.s

@@ -1,0 +1,1 @@
+full_no_pokemon_base_bn_gfx.o: full_no_pokemon_base_bn_gfx.s
