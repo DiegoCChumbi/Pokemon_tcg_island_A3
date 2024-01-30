@@ -24,7 +24,6 @@ bool es_basico(carta _carta){
 }
 
 carta_full* obtener_informacion_completa(carta _carta){
-    BN_LOG("Obtener tipo1:",_carta.obtener_tipo1());
     switch (_carta.obtener_tipo1())
     {
     case 1:{
@@ -66,7 +65,6 @@ carta_full* obtener_informacion_completa(carta _carta){
 carta_full* diccionario_normal(carta _carta){
 
     bn::string<32> nombre = _carta.obtener_nombre();
-    BN_LOG("Estoy buscando: ",nombre);
 
     carta_full* carta = new carta_full();
     carta->habilidad = false;
@@ -100,7 +98,6 @@ carta_full* diccionario_normal(carta _carta){
     }
     case 9:{        //psiquico
         if(nombre == (bn::string<32>)"Meloetta"){
-            BN_LOG("Ingrese donde meoleotta");
             carta->stage = 0;
             carta->ps = 90;
 
@@ -128,7 +125,6 @@ carta_full* diccionario_normal(carta _carta){
             carta->resistencia = 6;
             carta->retirada = 1;
         }else if(nombre == (bn::string<32>)"Deoxys"){
-            BN_LOG("Ingrese donde deoxys");
             carta->stage = 0;
             carta->ps = 120;
 
@@ -165,9 +161,6 @@ carta_full* diccionario_normal(carta _carta){
     default:
         break;
     }
-
-    BN_LOG("Dentro del diccionario: ",carta->texto[0]);
-
     return carta;
 
 }
@@ -196,7 +189,6 @@ carta_full* diccionario_normal_habilidad(carta _carta){
     }
     case 5:{        //fuego
         if(nombre == (bn::string<32>)"Oricorio"){
-            BN_LOG("Entre donde oricorio");
             carta->stage = 0;
             carta->ps = 90;
             carta->habilidad = true;

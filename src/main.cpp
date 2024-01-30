@@ -33,47 +33,39 @@ int main()
     bn::random random;
 
     bn::vector<carta,60> deck1;
-
+    deck1.push_back(carta("Meloetta",1,9));
+    deck1.push_back(carta("Mew V",3,9));
     deck1.push_back(carta("Genesect V",4,7));
+    deck1.push_back(carta("Mew V",3,9));
+    deck1.push_back(carta("Deoxys",1,9));
     deck1.push_back(carta("Mew VMAX",7,9));
-    deck1.push_back(carta("Pase de Combate VIP",9,1));
-    deck1.push_back(carta("Órdenes de Jefes",9,2));
-    deck1.push_back(carta("Cramobot",9,1));
-    deck1.push_back(carta("Brillo de Camila",9,2));
-    deck1.push_back(carta("Cristal Niebla",9,1));
-    deck1.push_back(carta("Caramelo Energético",9,1));
-    deck1.push_back(carta("Viejo Cementerio",9,3));
-    deck1.push_back(carta("Cambio",9,1));
-    deck1.push_back(carta("Ultra Ball",9,1));
-
-    deck1.push_back(carta("Mew V",3,9));
-    deck1.push_back(carta("Mew V",3,9));
-    
+    deck1.push_back(carta("Deoxys",1,9));
     deck1.push_back(carta("Mew VMAX",7,9));
     
     deck1.push_back(carta("Genesect V",4,7));
+    
     deck1.push_back(carta("Meloetta",1,9));
     deck1.push_back(carta("Meloetta",1,9));
-    deck1.push_back(carta("Meloetta",1,9));
-    deck1.push_back(carta("Deoxys",1,9));
-    deck1.push_back(carta("Deoxys",1,9));
+    
+    
     deck1.push_back(carta("Oricorio",2,5));
 
     deck1.push_back(carta("Pase de Combate VIP",9,1));
     deck1.push_back(carta("Pase de Combate VIP",9,1));
     deck1.push_back(carta("Pase de Combate VIP",9,1));
-    
-    
+    deck1.push_back(carta("Pase de Combate VIP",9,1));
+    deck1.push_back(carta("Órdenes de Jefes",9,2));
+    deck1.push_back(carta("Órdenes de Jefes",9,2));
     deck1.push_back(carta("Órdenes de Jefes",9,2));
     deck1.push_back(carta("Órdenes de Jefes",9,2));
     deck1.push_back(carta("Cinturón Elección",9,1));
     deck1.push_back(carta("Cinturón Elección",9,1));
     deck1.push_back(carta("Cinturón Elección",9,1));
-    
     deck1.push_back(carta("Cramobot",9,1));
     deck1.push_back(carta("Cramobot",9,1));
     deck1.push_back(carta("Cramobot",9,1));
-    
+    deck1.push_back(carta("Cramobot",9,1));
+    deck1.push_back(carta("Brillo de Camila",9,2));
     deck1.push_back(carta("Brillo de Camila",9,2));
     deck1.push_back(carta("Brillo de Camila",9,2));
     deck1.push_back(carta("Brillo de Camila",9,2));
@@ -81,17 +73,20 @@ int main()
     deck1.push_back(carta("Cuera Huida",9,1));
     deck1.push_back(carta("Cristal Niebla",9,1));
     deck1.push_back(carta("Cristal Niebla",9,1));
-    
+    deck1.push_back(carta("Cristal Niebla",9,1));
     deck1.push_back(carta("Cristal Niebla",9,1));
     deck1.push_back(carta("Viejo Cementerio",9,3));
-    
-    
+    deck1.push_back(carta("Viejo Cementerio",9,3));
     deck1.push_back(carta("Caramelo Energético",9,1));
     deck1.push_back(carta("Caramelo Energético",9,1));
     deck1.push_back(carta("Caramelo Energético",9,1));
-    
+    deck1.push_back(carta("Caramelo Energético",9,1));
     deck1.push_back(carta("Cambio",9,1));
-    
+    deck1.push_back(carta("Cambio",9,1));
+    deck1.push_back(carta("Ultra Ball",9,1));
+    deck1.push_back(carta("Ultra Ball",9,1));
+    deck1.push_back(carta("Ultra Ball",9,1));
+    deck1.push_back(carta("Ultra Ball",9,1));
 
     deck1.push_back(carta("Enegia Basica Psiquica",10,9));
     deck1.push_back(carta("Enegia Basica Psiquica",10,9));
@@ -104,72 +99,6 @@ int main()
     deck1.push_back(carta("Enegia Basica Psiquica",10,9));
     deck1.push_back(carta("Enegia Basica Psiquica",10,9));
     deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-
-    // deck1.push_back(carta("Mew V",3,9));
-    // deck1.push_back(carta("Mew V",3,9));
-    // deck1.push_back(carta("Mew VMAX",7,9));
-    // deck1.push_back(carta("Mew VMAX",7,9));
-    // deck1.push_back(carta("Genesect V",4,7));
-    // deck1.push_back(carta("Genesect V",4,7));
-    // deck1.push_back(carta("Meloetta",1,9));
-    // deck1.push_back(carta("Meloetta",1,9));
-    // deck1.push_back(carta("Meloetta",1,9));
-    // deck1.push_back(carta("Deoxys",1,9));
-    // deck1.push_back(carta("Deoxys",1,9));
-    // deck1.push_back(carta("Oricorio",2,5));
-
-    // deck1.push_back(carta("Pase de Combate VIP",9,1));
-    // deck1.push_back(carta("Pase de Combate VIP",9,1));
-    // deck1.push_back(carta("Pase de Combate VIP",9,1));
-    // deck1.push_back(carta("Pase de Combate VIP",9,1));
-    // deck1.push_back(carta("Órdenes de Jefes",9,2));
-    
-    // deck1.push_back(carta("Órdenes de Jefes",9,2));
-    // deck1.push_back(carta("Órdenes de Jefes",9,2));
-    // deck1.push_back(carta("Cinturón Elección",9,1));
-    // deck1.push_back(carta("Cinturón Elección",9,1));
-    // deck1.push_back(carta("Cinturón Elección",9,1));
-    // deck1.push_back(carta("Cramobot",9,1));
-    // deck1.push_back(carta("Cramobot",9,1));
-    // deck1.push_back(carta("Cramobot",9,1));
-    // deck1.push_back(carta("Cramobot",9,1));
-    // deck1.push_back(carta("Brillo de Camila",9,2));
-    // deck1.push_back(carta("Brillo de Camila",9,2));
-    // deck1.push_back(carta("Brillo de Camila",9,2));
-    // deck1.push_back(carta("Brillo de Camila",9,2));
-    // deck1.push_back(carta("Cuera Huida",9,1));
-    // deck1.push_back(carta("Cuera Huida",9,1));
-    // deck1.push_back(carta("Cristal Niebla",9,1));
-    // deck1.push_back(carta("Cristal Niebla",9,1));
-    // deck1.push_back(carta("Cristal Niebla",9,1));
-    // deck1.push_back(carta("Cristal Niebla",9,1));
-    // deck1.push_back(carta("Viejo Cementerio",9,3));
-    // deck1.push_back(carta("Viejo Cementerio",9,3));
-    // deck1.push_back(carta("Caramelo Energético",9,1));
-    // deck1.push_back(carta("Caramelo Energético",9,1));
-    // deck1.push_back(carta("Caramelo Energético",9,1));
-    // deck1.push_back(carta("Caramelo Energético",9,1));
-    // deck1.push_back(carta("Cambio",9,1));
-    // deck1.push_back(carta("Cambio",9,1));
-    // deck1.push_back(carta("Ultra Ball",9,1));
-
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
-    // deck1.push_back(carta("Enegia Basica Psiquica",10,9));
 
     bn::vector<carta,60> deck2 = bn::vector(deck1);
 

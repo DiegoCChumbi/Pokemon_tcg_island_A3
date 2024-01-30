@@ -4,6 +4,8 @@
 #include "bn_sprite_ptr.h"
 #include "bn_sprite_palette_item.h"
 #include "bn_sprite_palette_ptr.h"
+#include "bn_sprite_builder.h"
+#include "bn_vector.h"
 
 //include la la espalda de las cartas
 #include "bn_sprite_items_carta_back.h"
@@ -92,6 +94,7 @@
 #include "bn_sprite_palette_items_p_energia_psiquico.h"
 #include "bn_sprite_palette_items_p_energia_siniestro.h"
 
-bn::sprite_ptr dibuja(int tipo1, int tipo2, int x,int y);
+void dibuja(int tipo1, int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imagenes);
+void dibuja_m(int tipo1,int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imagenes,bn::vector<bn::sprite_ptr,60>::iterator ite);
 
 #endif // FUNCIONES_CARTAS_H

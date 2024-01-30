@@ -31,12 +31,23 @@ funciones_cartas.o: \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_bpp_mode.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_compression_type.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_ptr.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_carta_back.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_builder.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_camera_ptr.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_shape_size.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_item.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_tile.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_item.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed_point.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_point.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_ptr.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_ptr.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_affine_mat_ptr.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_double_size_mode.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_vector.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_vector_fwd.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_carta_back.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_base.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_base_habilidad.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_base_v.h \
@@ -123,12 +134,23 @@ funciones_cartas.o: \
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_bpp_mode.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_compression_type.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_ptr.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_carta_back.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_builder.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_camera_ptr.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_shape_size.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_item.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_tile.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_item.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed_point.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_point.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_ptr.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_ptr.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_affine_mat_ptr.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_double_size_mode.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_vector.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_vector_fwd.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_carta_back.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_base.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_base_habilidad.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_base_v.h:
