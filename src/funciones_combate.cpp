@@ -2,7 +2,7 @@
 
 
 
-void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_oponente,bn::random random){
+void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_oponente,bn::random& random){
 
     bn::regular_bg_ptr fondo = bn::regular_bg_items::playmat.create_bg(0,0);
 
@@ -28,17 +28,16 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
     bn::sprite_ptr oponente_superior = bn::sprite_items::carta_back.create_sprite(96,-19);
 
     //ZONAS DE JUEGO        ESTO DEBERIA SER CONSTEXPR
-    //posiciones de los activos
+    //posiciones de los activos jugador
     bn::fixed_point pos_activo_jugador(24,10);
-    bn::fixed_point pos_activo_oponente(24,-17);
-
-    //posiciones de las bancas
     bn::fixed_point pos_banca5_j(74,36);
     bn::fixed_point pos_banca4_j(49,36);
     bn::fixed_point pos_banca3_j(24,36);
     bn::fixed_point pos_banca2_j(-1,36);
     bn::fixed_point pos_banca1_j(-26,36);
+    //posiciones de los activos oponente
 
+    bn::fixed_point pos_activo_oponente(24,-17);
     bn::fixed_point pos_banca5_o(74,-41);
     bn::fixed_point pos_banca4_o(49,-41);
     bn::fixed_point pos_banca3_o(24,-41);
@@ -63,14 +62,13 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
     bn::vector<bn::fixed_point,19> pos;
 
     pos.push_back(pos_activo_jugador);
-    pos.push_back(pos_activo_oponente);
-
     pos.push_back(pos_banca1_j);
     pos.push_back(pos_banca2_j);
     pos.push_back(pos_banca3_j);
     pos.push_back(pos_banca4_j);
     pos.push_back(pos_banca5_j);
 
+    pos.push_back(pos_activo_oponente);
     pos.push_back(pos_banca1_o);
     pos.push_back(pos_banca2_o);
     pos.push_back(pos_banca3_o);
@@ -134,28 +132,70 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
     */
 
 
-   int indices_jugador[5]={0, 0, 0,60,60};
-//                         a  b  c  d  e
-   robar_carta(tronco_jugador,imagenes_jugador,jugador_superior,indices_jugador,7);
-   //BN_LOG(verificar_mano_inicial(tronco_jugador, indices_jugador));
-   //log_tronco(tronco_jugador,indices_jugador);
-   //barajear(tronco_jugador,indices_jugador,2,random);
-//    log_tronco(tronco_jugador);
-   
-//    BN_LOG("a:",indices_jugador[0]);
-//    BN_LOG("b:",indices_jugador[1]);
+    int indices_jugador[5]={0, 0, 0,60,60};
+    //                      a  b  c  d  e
+    int indices_oponente[5]={0,0,0,60,60};
 
-   while(true){
-        // BN_LOG(tronco_jugador[2].obtener_nombre());
-        // if(bn::keypad::l_pressed()) mostrar_informacion(tronco_jugador[1]);
-        //log_tronco(tronco_jugador,indices_jugador);
-        tiempo_medio(pos,imagenes_jugador,imagenes_oponente,tronco_jugador,tronco_jugador,indices_jugador);
+    //Barajeo inicial
+    barajear(tronco_jugador,indices_jugador,6,random);
+    barajear(tronco_oponente,indices_oponente,6,random);
+
+    //Mano inicial
+    robar_carta(tronco_jugador,imagenes_jugador,jugador_superior,indices_jugador,7,0);
+    robar_carta(tronco_oponente,imagenes_oponente,oponente_superior,indices_oponente,7,1);
+
+    //Se corrobora que la mano sea valida, caso contrario se devuelve las cartas, se barajea y se roba 7 otra vez
+    while(!verificar_mano_inicial(tronco_jugador,indices_jugador)){
+        bn::vector<bn::sprite_ptr,6> anuncio;
+        bn::sprite_text_generator text(common::variable_8x8_sprite_font);
+        text.generate(-40,0,"No tienes Pokémon básicos",anuncio);
+        wait(60);
+        anuncio.clear();
+        indices_jugador[1] = 0;
+        imagenes_jugador.clear();
+        barajear(tronco_jugador,indices_jugador,6,random);
+        robar_carta(tronco_jugador,imagenes_jugador,jugador_superior,indices_jugador,7,0);
+    }
+
+    while(!verificar_mano_inicial(tronco_oponente,indices_oponente)){
+        bn::vector<bn::sprite_ptr,6> anuncio;
+        bn::sprite_text_generator text(common::variable_8x8_sprite_font);
+        text.generate(-55,0,"El rival no tiene Pokémon básicos",anuncio);
+        wait(60);
+        anuncio.clear();
+        //Faltaria agregar una funcion que nos deje inspeccionar la mano del oponente
+        indices_oponente[1] = 0;
+        imagenes_oponente.clear();
+        barajear(tronco_oponente,indices_oponente,6,random);
+        robar_carta(tronco_oponente,imagenes_oponente,oponente_superior,indices_oponente,7,1);
+    }
+
+    //Se agregan los premios
+    deck_premios(tronco_jugador,imagenes_jugador,indices_jugador,pos,0);
+    deck_premios(tronco_jugador,imagenes_jugador,indices_jugador,pos,0);
+    deck_premios(tronco_jugador,imagenes_jugador,indices_jugador,pos,0);
+    deck_premios(tronco_jugador,imagenes_jugador,indices_jugador,pos,0);
+    deck_premios(tronco_jugador,imagenes_jugador,indices_jugador,pos,0);
+    deck_premios(tronco_jugador,imagenes_jugador,indices_jugador,pos,0);
+
+    deck_premios(tronco_oponente,imagenes_oponente,indices_oponente,pos,1);
+    deck_premios(tronco_oponente,imagenes_oponente,indices_oponente,pos,1);
+    deck_premios(tronco_oponente,imagenes_oponente,indices_oponente,pos,1);
+    deck_premios(tronco_oponente,imagenes_oponente,indices_oponente,pos,1);
+    deck_premios(tronco_oponente,imagenes_oponente,indices_oponente,pos,1);
+    deck_premios(tronco_oponente,imagenes_oponente,indices_oponente,pos,1);
+
+    // log_tronco(tronco_jugador,indices_jugador);
+    // log_tronco(tronco_oponente,indices_oponente);
+
+    while(true){
+        jugador_juega(pos,imagenes_jugador,imagenes_oponente,tronco_jugador,tronco_jugador,indices_jugador);
         bn::core::update();
-   }
+    }
 
 }
 
-void robar_carta(bn::vector<carta,60> tronco,bn::vector<bn::sprite_ptr,60>& imagenes,bn::sprite_ptr& carta,int indices[5],int cant_cartas){
+void robar_carta(bn::vector<carta,60> tronco,bn::vector<bn::sprite_ptr,60>& imagenes,bn::sprite_ptr& carta,int indices[5],int cant_cartas,int a_quien){
     
     bn::fixed x_inicial = carta.x();
     bn::fixed y_inicial = carta.y();
@@ -163,14 +203,12 @@ void robar_carta(bn::vector<carta,60> tronco,bn::vector<bn::sprite_ptr,60>& imag
     int velocidad = 2;
 
     for(int n=0;n<cant_cartas;n++){
-        //if((indices[1]+1)==indices[2]) break;
-        
         for(int j=0;j<30;j++){
             carta.set_x(carta.x()+velocidad);
             bn::core::update();
         }
         carta.set_position(x_inicial,y_inicial);
-        agrega_imagen(tronco,imagenes,tronco[indices[1]]);
+        agrega_imagen(tronco,imagenes,tronco[indices[1]],a_quien);
         indices[1]++;
         indices[2]++;
         reorganiza_imagen(imagenes,indices[0],indices[1]);
@@ -178,9 +216,13 @@ void robar_carta(bn::vector<carta,60> tronco,bn::vector<bn::sprite_ptr,60>& imag
     }
 }
 
-void agrega_imagen(bn::vector<carta,60> tronco, bn::vector<bn::sprite_ptr,60>& imagenes,carta _carta){
-    dibuja(_carta.obtener_tipo1(),_carta.obtener_tipo2(),0,62,imagenes);
-}   //PROBAR HACER LOS SPRITES CON SPRITE_CONSTRUCTOR
+void agrega_imagen(bn::vector<carta,60> tronco, bn::vector<bn::sprite_ptr,60>& imagenes,carta _carta,int a_quien){
+    if(!a_quien){
+        dibuja(_carta.obtener_tipo1(),_carta.obtener_tipo2(),0,62,imagenes);
+    }else{
+        dibuja(0,0,0,-68,imagenes);
+    }
+}
 
 void agregar_imagenes_m(bn::vector<bn::sprite_ptr,60>& imagenes,carta _carta,int indices[5]){
     bn::vector<bn::sprite_ptr,60>::iterator ite = imagenes.begin() + indices[0];
@@ -189,18 +231,14 @@ void agregar_imagenes_m(bn::vector<bn::sprite_ptr,60>& imagenes,carta _carta,int
 
 void reorganiza_imagen(bn::vector<bn::sprite_ptr,60>& imagenes,int a,int b){
     int n = b-a;
-    BN_LOG("Cant cartas en mano: ",n);
     int s = 10; //separacion entre cartas
     int distancia = 8 + s;
     int posicion_inicial = -distancia*((n-1)/2);
-    BN_LOG("Posicion inicial: ",posicion_inicial);
     int cont = 0;
     for(int j=a;j<b;j++){
-        //BN_LOG(j);
         imagenes[j].set_x(posicion_inicial+(distancia*cont));
         cont++;
     }
-    BN_LOG("Pos primera carta: ",imagenes[0].x());
 
     bn::core::update();
 
@@ -208,7 +246,7 @@ void reorganiza_imagen(bn::vector<bn::sprite_ptr,60>& imagenes,int a,int b){
 void reorganiza_imagen_m(bn::vector<bn::sprite_ptr, 60>& imagenes, int indices[5],bn::vector<bn::fixed_point,19> pos){
     
     for(int n = 0; n<indices[0]; n++){
-        imagenes[n].set_position(pos[n+2]);
+        imagenes[n].set_position(pos[n]);
     }
 }
 
@@ -226,16 +264,6 @@ carta retirar_carta(bn::vector<carta,60> &tronco,bn::vector<bn::sprite_ptr,60>& 
     bn::vector<carta,60>::const_iterator posicion = tronco.begin()+indice_carta;
     tronco.erase(posicion);
 
-    // if(indice_carta>=indices_jugador[0] and indice_carta<indices_jugador[1]){ //Mano
-    //     if(indices_jugador[0]==-1){
-    //         bn::vector<bn::sprite_ptr,60>::const_iterator posicion_imagen = imagenes.begin()+indice_carta;
-    //         imagenes.erase(posicion_imagen);
-    //     }else{
-    //         bn::vector<bn::sprite_ptr,60>::const_iterator posicion_imagen = imagenes.begin()+indice_carta-indices_jugador[0]-1;
-    //         imagenes.erase(posicion_imagen);
-    //     }
-    // }
-
     if(indice_carta>=0 and indice_carta<indices_jugador[0]){    //Cartas en juego
         indices_jugador[0]--;
         indices_jugador[1]--;
@@ -243,9 +271,7 @@ carta retirar_carta(bn::vector<carta,60> &tronco,bn::vector<bn::sprite_ptr,60>& 
         indices_jugador[3]--;
         indices_jugador[4]--;
     }else if(indice_carta>=indices_jugador[0] and indice_carta<indices_jugador[1]){     //Cartas en la mano
-        //bn::vector<bn::sprite_ptr,60>::const_iterator posicion_imagen = imagenes.begin()+indice_carta-indices_jugador[0];
         bn::vector<bn::sprite_ptr,60>::const_iterator posicion_imagen = imagenes.begin()+indice_carta;
-        //BN_LOG("-------->",indice_carta);
         imagenes.erase(posicion_imagen);
         
 
@@ -259,7 +285,6 @@ carta retirar_carta(bn::vector<carta,60> &tronco,bn::vector<bn::sprite_ptr,60>& 
         indices_jugador[3]--;
         indices_jugador[4]--;
     }else if(indice_carta>=indices_jugador[2] and indice_carta<indices_jugador[3]){     //Cartas en el deck
-        //BN_LOG("Longitud del vector: ",tronco.size());
         indices_jugador[2]--;
         indices_jugador[3]--;
         indices_jugador[4]--;
@@ -332,10 +357,12 @@ void log_tronco(bn::vector<carta,60> tronco,int indices[5]){
 
 }
 
-void barajear(bn::vector<carta,60>& tronco,int indices[5],int n,bn::random random){
+void barajear(bn::vector<carta,60>& tronco,int indices[5],int n,bn::random& random){
     
     int indice1;
     int indice2;
+
+    BN_LOG("???");
     
     switch (n)
     {
@@ -361,17 +388,19 @@ void barajear(bn::vector<carta,60>& tronco,int indices[5],int n,bn::random rando
     }
     default:
         break;
-    }
-
-    // BN_LOG(indice1);
-    // BN_LOG(indice2);
-
     int cant = indice2-indice1;
+    }
+    
 
-    for(int n=indice1;n<indice2;n++){
-        cambio(tronco,n,random.get_int(indice1,indice2));
+    for(int j=0;j<5;j++){
+        for(int n=indice1;n<indice2;n++){
+            cambio(tronco,n,random.get_int(indice1,indice2));
+        }
     }
 
+    // for(int n=indice1;n<indice2;n++){
+    //     cambio(tronco,n,random.get_int(indice1,indice2));
+    // }
 }
 
 bool verificar_mano_inicial(bn::vector<carta,60> tronco, int indices[5]){
@@ -405,7 +434,7 @@ void cambio(bn::vector<carta,60>& tronco,int a, int b){
 
 }
 
-void agrega_carta(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,class carta _carta,int indices[5],int a,bn::vector<bn::fixed_point,19> pos){
+void agrega_carta(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,class carta _carta,int indices[5],int a,bn::vector<bn::fixed_point,19> pos,int a_quien){
     
     bn::vector<carta,60>::const_iterator posicion = tronco.begin();
 
@@ -423,13 +452,12 @@ void agrega_carta(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& im
         break;
     }
     case 2:{    //Agregar a la mano
-        //bn::vector<carta,60>::const_iterator posicion = tronco.begin() + indices[0];
         posicion += indices[0];
         tronco.insert(posicion,_carta);
         indices[1]++;
         indices[2]++;
         indices[3]++;
-        agrega_imagen(tronco,imagenes,_carta);
+        agrega_imagen(tronco,imagenes,_carta,a_quien);
         reorganiza_imagen(imagenes,indices[0],indices[1]);
         break;
     }
@@ -442,7 +470,6 @@ void agrega_carta(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& im
         break;
     }
     case 4:{    //Agregar al deck
-        //bn::vector<carta,60>::const_iterator posicion = tronco.begin() + indices[1];
         posicion += indices[2];
         tronco.insert(posicion,_carta);
         indices[3]++;
@@ -450,14 +477,12 @@ void agrega_carta(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& im
         break;
     }
     case 5:{    //Agregar al descarte
-        //bn::vector<carta,60>::const_iterator posicion = tronco.begin() + indices[2];
         posicion += indices[3];
         tronco.insert(posicion,_carta);
         indices[4]++;
         break;
     }
     case 6:{    //Agregar a los premios
-        //bn::vector<carta,60>::const_iterator posicion = tronco.begin() + indices[3];
         posicion += indices[4];
         tronco.insert(posicion,_carta);
         break;
@@ -467,46 +492,46 @@ void agrega_carta(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& im
     }
 }
 
-void mano_juego(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos){
+void mano_juego(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien){
     class carta retirado = retirar_carta(tronco,imagenes,indices,indice);
 
-    agrega_carta(tronco,imagenes,retirado,indices,1,pos);
+    agrega_carta(tronco,imagenes,retirado,indices,1,pos,a_quien);
 }
 
-void mano_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos){
+void mano_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien){
     class carta retirado = retirar_carta(tronco,imagenes,indices,indice);
 
-    agrega_carta(tronco,imagenes,retirado,indices,5,pos);
+    agrega_carta(tronco,imagenes,retirado,indices,5,pos,a_quien);
 }
 
-void mano_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos){
+void mano_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien){
     class carta retirado = retirar_carta(tronco,imagenes,indices,indice);
 
-    agrega_carta(tronco,imagenes,retirado,indices,4,pos);
+    agrega_carta(tronco,imagenes,retirado,indices,4,pos,a_quien);
 }
 
-void deck_premios(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos){
+void deck_premios(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos,int a_quien){
     class carta retirado = retirar_carta(tronco,imagenes,indices,indices[1]);
 
-    agrega_carta(tronco,imagenes,retirado,indices,6,pos);
+    agrega_carta(tronco,imagenes,retirado,indices,6,pos,a_quien);
 }
 
-void deck_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos){
+void deck_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos,int a_quien){
     class carta retirado = retirar_carta(tronco,imagenes,indices,indices[1]);
 
-    agrega_carta(tronco,imagenes,retirado,indices,5,pos);
+    agrega_carta(tronco,imagenes,retirado,indices,5,pos,a_quien);
 }
 
-void premios_mano(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos){
+void premios_mano(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien){
     class carta retirado = retirar_carta(tronco,imagenes,indices,indice);
 
-    agrega_carta(tronco,imagenes,retirado,indices,2,pos);
+    agrega_carta(tronco,imagenes,retirado,indices,2,pos,a_quien);
 }
 
-void descarte_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos){
+void descarte_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien){
     class carta retirado = retirar_carta(tronco,imagenes,indices,indice);
 
-    agrega_carta(tronco,imagenes,retirado,indices,4,pos);
+    agrega_carta(tronco,imagenes,retirado,indices,4,pos,a_quien);
 }
 
 
@@ -553,9 +578,7 @@ bn::fixed_point mas_cercano(bn::fixed_point actual, bn::vector<bn::fixed_point,1
             }
         }else{
             for(bn::fixed_point temp : posiciones){
-            //BN_LOG(temp.y() < actual.y());
                 if(temp.y() < actual.y() and !(actual == temp)){
-                    //BN_LOG(distancia(temp,actual));
                     bn::fixed d = distancia(temp,actual);
                     if(d < distancia_menor){
                         optimo = temp;
@@ -584,9 +607,7 @@ bn::fixed_point mas_cercano(bn::fixed_point actual, bn::vector<bn::fixed_point,1
             }
         }else{
             for(bn::fixed_point temp : posiciones){
-            //BN_LOG(temp.y() < actual.y());
                 if(temp.y() > actual.y() and !(actual == temp)){
-                    //BN_LOG(distancia(temp,actual));
                     bn::fixed d = distancia(temp,actual);
                     if(d < distancia_menor){
                         optimo = temp;
@@ -619,9 +640,7 @@ bn::fixed_point mas_cercano(bn::fixed_point actual, bn::vector<bn::fixed_point,1
             }
         }else{
             for(bn::fixed_point temp : posiciones){
-            //BN_LOG(temp.y() < actual.y());
                 if(temp.x() > actual.x() and !(actual == temp)){
-                    //BN_LOG(distancia(temp,actual));
                     bn::fixed d = distancia(temp,actual);
                     if(d < distancia_menor){
                         optimo = temp;
@@ -652,9 +671,7 @@ bn::fixed_point mas_cercano(bn::fixed_point actual, bn::vector<bn::fixed_point,1
             }
         }else{
             for(bn::fixed_point temp : posiciones){
-                //BN_LOG(temp.y() < actual.y());
                 if(temp.x() < actual.x() and !(actual == temp)){
-                    //BN_LOG(distancia(temp,actual));
                     bn::fixed d = distancia(temp,actual);
                     if(d < distancia_menor){
                         optimo = temp;
@@ -678,7 +695,7 @@ BN_CONST bn::fixed distancia(bn::fixed_point p1, bn::fixed_point p2){
     return sqrt(n_x+n_y);
 }
 
-void tiempo_medio(bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,60>& imagenes_jugador, 
+void jugador_juega(bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,60>& imagenes_jugador, 
                     bn::vector<bn::sprite_ptr,60>& imagenes_contrincante,bn::vector<carta,60>& deck_j,
                     bn::vector<carta,60>& deck_o, int indices_j[5]){
     
@@ -694,7 +711,7 @@ void tiempo_medio(bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,6
 
     bn::sprite_text_generator small_variable_text_generator(common::variable_8x8_sprite_font);
     small_variable_text_generator.set_left_alignment();
-    small_variable_text_generator.generate(-118,70,(*seleccionada).obtener_nombre(),nombre_carta_selec);
+    small_variable_text_generator.generate(-118,75,(*seleccionada).obtener_nombre(),nombre_carta_selec);
 
     while(true){
 
@@ -742,7 +759,7 @@ void tiempo_medio(bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,6
             }
             actualizado = false;
             nombre_carta_selec.clear();
-            small_variable_text_generator.generate(-118,70,(*seleccionada).obtener_nombre(),nombre_carta_selec);
+            small_variable_text_generator.generate(-118,75,(*seleccionada).obtener_nombre(),nombre_carta_selec);
         }
         
         //Mostrar informacion, boton L
@@ -779,16 +796,14 @@ void juega_carta(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,
         while(!bn::keypad::b_pressed()){
 
             if(bn::keypad::a_pressed()){        //cuando a es presionado
-                if(indices_j[0]<5){
+                if(indices_j[0]<6){
                     if(tipo1>0 && tipo1<3){         //y si es una carta basica
                         if(es_basico(*carta)){
-                            mano_juego(deck_j,imagenes_j,indices_j,indice,pos);
+                            mano_juego(deck_j,imagenes_j,indices_j,indice,pos,0);
                             break;
                         }
                     }else if(tipo1>2 && tipo1<5){   //los V siempre son basicos
-                        BN_LOG("V puesto en juego");
-                        BN_LOG("Indice: ",indice);
-                        mano_juego(deck_j,imagenes_j,indices_j,indice,pos);
+                        mano_juego(deck_j,imagenes_j,indices_j,indice,pos,0);
                         break;
                     }
                 }
@@ -810,6 +825,17 @@ void espera_a_presionado() {        //se asegura que la accion de presionar y so
 
     // Espera a que se suelte la tecla A
     while (bn::keypad::a_pressed()) {
+        bn::core::update();
+    }
+}
+
+void wait(int tiempo){
+
+    /*
+        Cada 60 es un segundo
+    */
+
+    for(int n = 0;n < tiempo; n++){
         bn::core::update();
     }
 }
