@@ -1,20 +1,20 @@
 #include "funciones_diccionario.h"
 
 bool es_basico(carta _carta){
-    if(_carta.obtener_tipo1()<1 or _carta.obtener_tipo1()>4) return false;
+    if(_carta.obtener_tipo1() < NORMAL_C or _carta.obtener_tipo1() > V_H) return false;
 
     switch (_carta.obtener_tipo1())
     {
-    case 1:{
+    case NORMAL_C:{
         return !diccionario_normal(_carta)->stage;
     }
-    case 2:{
+    case NORMAL_C_H:{
         return !diccionario_normal_habilidad(_carta)->stage;
     }
-    case 3:{
+    case V:{
         return !diccionario_v(_carta)->stage;
     }
-    case 4:{
+    case V_H:{
         return !diccionario_v_habilidad(_carta)->stage;
     }
     default:
@@ -26,34 +26,34 @@ bool es_basico(carta _carta){
 carta_full* obtener_informacion_completa(carta _carta){
     switch (_carta.obtener_tipo1())
     {
-    case 1:{
+    case NORMAL_C:{
         return diccionario_normal(_carta);
     }
-    case 2:{
+    case NORMAL_C_H:{
         return diccionario_normal_habilidad(_carta);
     }
-    case 3:{
+    case V:{
         return diccionario_v(_carta);
     }
-    case 4:{
+    case V_H:{
         return diccionario_v_habilidad(_carta);
     }
-    case 5:{
+    case VSTAR:{
         return diccionario_vstar(_carta);
     }
-    case 6:{
+    case VSTAR_H:{
         return diccionario_vstar_habilidad(_carta);
     }
-    case 7:{
+    case VMAX:{
         return diccionario_vmax(_carta);
     }
-    case 8:{
+    case VMAX_H:{
         return diccionario_vmax_habilidad(_carta);
     }
-    case 9:{
+    case NO_POKEMON:{
         return diccionario_no_pokemon(_carta);
     }
-    case 10:{
+    case ENERGIAS_BASICA:{
         return diccionario_energias(_carta);
     }
     default:
@@ -72,31 +72,31 @@ carta_full* diccionario_normal(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         if(nombre == (bn::string<32>)"Meloetta"){
             carta->stage = 0;
             carta->ps = 90;
@@ -155,7 +155,7 @@ carta_full* diccionario_normal(carta _carta){
         }
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -175,19 +175,19 @@ carta_full* diccionario_normal_habilidad(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         if(nombre == (bn::string<32>)"Oricorio"){
             carta->stage = 0;
             carta->ps = 90;
@@ -243,19 +243,19 @@ carta_full* diccionario_normal_habilidad(carta _carta){
         }
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -276,31 +276,31 @@ carta_full* diccionario_v(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         if(nombre == (bn::string<32>)"Mew V"){
             carta->stage = 0;
             carta->ps = 180;
@@ -350,7 +350,7 @@ carta_full* diccionario_v(carta _carta){
         }
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -371,25 +371,25 @@ carta_full* diccionario_v_habilidad(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         if(nombre == (bn::string<32>)"Genesect V"){
             carta->stage = 0;
             carta->ps = 190;
@@ -434,13 +434,13 @@ carta_full* diccionario_v_habilidad(carta _carta){
         }
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -461,34 +461,34 @@ carta_full* diccionario_vstar(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -509,34 +509,34 @@ carta_full* diccionario_vstar_habilidad(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -557,31 +557,31 @@ carta_full* diccionario_vmax(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         if(nombre==(bn::string<32>)"Mew VMAX"){
             carta->stage = 1;
             carta->ps = 310;
@@ -629,7 +629,7 @@ carta_full* diccionario_vmax(carta _carta){
         }
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -650,34 +650,34 @@ carta_full* diccionario_vmax_habilidad(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -697,7 +697,7 @@ carta_full* diccionario_no_pokemon(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //objeto
+    case OBJETO:{        //objeto
         if(nombre == (bn::string<32>)"Pase de Combate VIP"){
             bn::string<30> linea1 = "Puedes jugar esta carta";
             bn::string<30> linea2 = "solo durante tu primer";
@@ -842,7 +842,7 @@ carta_full* diccionario_no_pokemon(carta _carta){
         }
         break;
     }
-    case 2:{        //partidario
+    case PARTIDARIO:{        //partidario
         if(nombre == (bn::string<32>)"Órdenes de Jefes"){
             bn::string<30> linea1 = "Cambia 1 de los Pokemon";
             bn::string<30> linea2 = "en Banca de tu rival";
@@ -872,7 +872,7 @@ carta_full* diccionario_no_pokemon(carta _carta){
         }
         break;
     }
-    case 3:{        //estadio
+    case ESTADIO:{        //estadio
         if(nombre == (bn::string<32>)"Viejo Cementerio"){
             bn::string<30> linea1 = "Cada vez que algún";
             bn::string<30> linea2 = "jugador una 1 carta de";
@@ -909,31 +909,31 @@ carta_full* diccionario_energias(carta _carta){
 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electrico
+    case ELECTRICO:{        //electrico
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psiquico
+    case PSIQUICO:{        //psiquico
         bn::string<30> linea1 = "Energía Psíquica";
         bn::string<30> linea2 = "Básica";
 
@@ -941,7 +941,7 @@ carta_full* diccionario_energias(carta _carta){
         carta->texto.push_back(linea2);
         break;
     }
-    case 10:{       //sinietro
+    case SINIESTRO:{       //sinietro
         break;
     }
     default:
@@ -955,23 +955,23 @@ carta_full* diccionario_energias(carta _carta){
 bn::sprite_ptr obtener_imagen(carta _carta,int x,int y){
     switch (_carta.obtener_tipo1())
     {
-    case 1:
-    case 2:{
+    case NORMAL_C:
+    case NORMAL_C_H:{
         return obtener_imagen_normal(_carta,x,y);
     }
-    case 3:
-    case 4:{
+    case V:
+    case V_H:{
         return obtener_imagen_v(_carta,x,y);
     }
-    // case 5:
-    // case 6:{
-    //     return obtener_imagen_vstar(_carta);
-    // }
-    case 7:
-    case 8:{
+    case VSTAR:
+    case VSTAR_H:{
+        return obtener_imagen_vstar(_carta,x,y);
+    }
+    case VMAX:
+    case VMAX_H:{
         return obtener_imagen_vmax(_carta,x,y);
     }
-    case 9:{
+    case NO_POKEMON:{
         return obtener_imagen_no_pokemon(_carta,x,y);
     }
     default:
@@ -984,35 +984,35 @@ bn::sprite_ptr obtener_imagen_normal(carta _carta,int x,int y){
     int ajuste_pos = 50; 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electricidad
+    case ELECTRICO:{        //electricidad
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         if(nombre == (bn::string<32>)"Oricorio"){
             bn::sprite_ptr imagen = bn::sprite_items::oricorio.create_sprite(x-1,y+ajuste_pos);
             return imagen;
         }
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psquico
+    case PSIQUICO:{        //psquico
         if(nombre == (bn::string<32>)"Meloetta"){
             bn::sprite_ptr imagen = bn::sprite_items::meloetta.create_sprite(x-1,y+ajuste_pos);
             return imagen;
@@ -1022,7 +1022,7 @@ bn::sprite_ptr obtener_imagen_normal(carta _carta,int x,int y){
         }
         break;
     }
-    case 10:{       //siniestro
+    case SINIESTRO:{       //siniestro
         break;
     }
     default:
@@ -1035,42 +1035,42 @@ bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y){
     int ajuste_pos = 64; 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electricidad
+    case ELECTRICO:{        //electricidad
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         if(nombre == (bn::string<32>)"Genesect V"){
             bn::sprite_ptr imagen = bn::sprite_items::genesect_v.create_sprite(x,y+ajuste_pos);
             return imagen;
         }
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psquico
+    case PSIQUICO:{        //psquico
         if(nombre == (bn::string<32>)"Mew V"){
             bn::sprite_ptr imagen = bn::sprite_items::mew_v.create_sprite(x,y+ajuste_pos);
             return imagen;
         }
         break;
     }
-    case 10:{       //siniestro
+    case SINIESTRO:{       //siniestro
         break;
     }
     default:
@@ -1078,82 +1078,82 @@ bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y){
     }
 }
 
-// bn::sprite_ptr obtener_imagen_vstar(carta _carta,int x,int y){
-    // bn::string<32> nombre = _carta.obtener_nombre();
-    // switch (_carta.obtener_tipo2())
-    // {
-    // case 1:{        //normal
-    //     break;
-    // }
-    // case 2:{        //agua
-    //     break;
-    // }
-    // case 3:{        //dragon
-    //     break;
-    // }
-    // case 4:{        //electricidad
-    //     break;
-    // }
-    // case 5:{        //fuego
-    //     break;
-    // }
-    // case 6:{        //lucha
-    //     break;
-    // }
-    // case 7:{        //metal
-    //     break;
-    // }
-    // case 8:{        //planta
-    //     break;
-    // }
-    // case 9:{        //psquico
-    //     break;
-    //     }
-    // case 10:{       //siniestro
-    //     break;
-    // }
-    // default:
-    //     break;
-    // }
-// }
+bn::sprite_ptr obtener_imagen_vstar(carta _carta,int x,int y){
+    bn::string<32> nombre = _carta.obtener_nombre();
+    switch (_carta.obtener_tipo2())
+    {
+    case NORMAL:{        //normal
+        break;
+    }
+    case AGUA:{        //agua
+        break;
+    }
+    case DRAGON:{        //dragon
+        break;
+    }
+    case ELECTRICO:{        //electricidad
+        break;
+    }
+    case FUEGO:{        //fuego
+        break;
+    }
+    case LUCHA:{        //lucha
+        break;
+    }
+    case METAL:{        //metal
+        break;
+    }
+    case PLANTA:{        //planta
+        break;
+    }
+    case PSIQUICO:{        //psquico
+        break;
+        }
+    case SINIESTRO:{       //siniestro
+        break;
+    }
+    default:
+        break;
+    }
+}
 
 bn::sprite_ptr obtener_imagen_vmax(carta _carta,int x,int y){
     bn::string<32> nombre = _carta.obtener_nombre();
     int ajuste_pos = 64; 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //normal
+    case NORMAL:{        //normal
         break;
     }
-    case 2:{        //agua
+    case AGUA:{        //agua
         break;
     }
-    case 3:{        //dragon
+    case DRAGON:{        //dragon
         break;
     }
-    case 4:{        //electricidad
+    case ELECTRICO:{        //electricidad
         break;
     }
-    case 5:{        //fuego
+    case FUEGO:{        //fuego
         break;
     }
-    case 6:{        //lucha
+    case LUCHA:{        //lucha
         break;
     }
-    case 7:{        //metal
+    case METAL:{        //metal
         break;
     }
-    case 8:{        //planta
+    case PLANTA:{        //planta
         break;
     }
-    case 9:{        //psquico
+    case PSIQUICO:{        //psquico
         if(nombre == (bn::string<32>)"Mew VMAX"){
             bn::sprite_ptr imagen = bn::sprite_items::mew_vmax.create_sprite(x,y+ajuste_pos);
             return imagen;
         }
         break;
     }
-    case 10:{       //siniestro
+    case SINIESTRO:{       //siniestro
         break;
     }
     default:
@@ -1166,7 +1166,7 @@ bn::sprite_ptr obtener_imagen_no_pokemon(carta _carta,int x,int y){
     int ajuste_pos = 50; 
     switch (_carta.obtener_tipo2())
     {
-    case 1:{        //objeto
+    case OBJETO:{        //objeto
         if(nombre == (bn::string<32>)"Pase de Combate VIP"){
             bn::sprite_ptr imagen = bn::sprite_items::pase_de_combate_vip.create_sprite(x-1,y+ajuste_pos);
             return imagen;
@@ -1194,7 +1194,7 @@ bn::sprite_ptr obtener_imagen_no_pokemon(carta _carta,int x,int y){
         }
         break;
     }
-    case 2:{        //partidario
+    case PARTIDARIO:{        //partidario
         if(nombre == (bn::string<32>)"Órdenes de Jefes"){
             bn::sprite_ptr imagen = bn::sprite_items::ordenes_de_jefes.create_sprite(x-1,y+ajuste_pos);
             return imagen;
@@ -1204,7 +1204,7 @@ bn::sprite_ptr obtener_imagen_no_pokemon(carta _carta,int x,int y){
         }
         break;
     }
-    case 3:{        //estadio
+    case ESTADIO:{        //estadio
         if(nombre == (bn::string<32>)"Viejo Cementerio"){
             bn::sprite_ptr imagen = bn::sprite_items::viejo_cementerio.create_sprite(x-1,y+ajuste_pos);
             return imagen;

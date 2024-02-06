@@ -7,6 +7,7 @@
 #include "bn_vector.h"
 
 #include "carta.h"
+#include "enumeraciones.h"
 
 //base imagenes normal
 #include "bn_sprite_items_full_normal_base.h"

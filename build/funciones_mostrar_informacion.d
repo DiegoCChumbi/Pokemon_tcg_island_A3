@@ -83,6 +83,7 @@ funciones_mostrar_informacion.o: \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_affine_bg_items_pantalla_gris.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_diccionario.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/enumeraciones.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_v.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_vmax.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_genesect_v.h \
@@ -244,6 +245,7 @@ funciones_mostrar_informacion.o: \
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_affine_bg_items_pantalla_gris.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_diccionario.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/enumeraciones.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_v.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_vmax.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_genesect_v.h:

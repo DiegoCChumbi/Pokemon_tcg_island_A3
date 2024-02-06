@@ -7,6 +7,8 @@
 #include "bn_sprite_builder.h"
 #include "bn_vector.h"
 
+#include "enumeraciones.h"
+
 //include la la espalda de las cartas
 #include "bn_sprite_items_carta_back.h"
 

@@ -7,6 +7,7 @@
 #include "bn_sprite_ptr.h"
 
 #include "carta.h"
+#include "enumeraciones.h"  
 
 //imagenes full
 #include "bn_sprite_items_mew_v.h"
@@ -70,7 +71,7 @@ bn::sprite_ptr obtener_imagen_normal(carta _carta,int x,int y);
 
 bn::sprite_ptr obtener_imagen_v(carta _carta,int x,int y);
 
-// bn::sprite_ptr obtener_imagen_vstar(carta _carta);
+bn::sprite_ptr obtener_imagen_vstar(carta _carta,int x,int y);
 
 bn::sprite_ptr obtener_imagen_vmax(carta _carta,int x,int y);
 

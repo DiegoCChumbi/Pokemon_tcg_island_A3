@@ -67,7 +67,8 @@ void turno_jugador(bn::vector<bn::fixed_point,19> pos,
 //                     int indices_j[5],int indices_o[5],int n_turno);
 void juega_carta(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,
                  bn::vector<bn::sprite_ptr,60>& imagenes_j,bn::vector<bn::sprite_ptr,60>& imagenes_o,
-                 carta* carta,int indice,bn::sprite_ptr &flecha,int indices_j[5],bn::vector<bn::fixed_point,19> pos,bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
+                 carta* carta,int indice,bn::sprite_ptr &flecha,int indices_j[5],bn::vector<bn::fixed_point,19> pos,
+                 bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o,bool& posible_energia,bool& posible_retirar);
 void espera_a_presionado();
 void espera_b_presionado();
 void wait(int tiempo);

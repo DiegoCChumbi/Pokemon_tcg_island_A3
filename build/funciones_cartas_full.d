@@ -50,6 +50,7 @@ funciones_cartas_full.o: \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_string_view.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/enumeraciones.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_full_normal_base.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_full_normal_agua.h \
@@ -162,6 +163,7 @@ funciones_cartas_full.o: \
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_string_view.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/enumeraciones.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_full_normal_base.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_full_normal_agua.h:
