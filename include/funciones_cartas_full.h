@@ -57,6 +57,16 @@
 #include "bn_sprite_palette_items_p_full_no_pokemon_partidario.h"
 #include "bn_sprite_palette_items_p_full_no_pokemon_estadio.h"
 
+//energias basicas
+#include "bn_sprite_items_energia_full_agua.h"
+#include "bn_sprite_items_energia_full_electrico.h"
+#include "bn_sprite_items_energia_full_fuego.h"
+#include "bn_sprite_items_energia_full_lucha.h"
+#include "bn_sprite_items_energia_full_metal.h"
+#include "bn_sprite_items_energia_full_planta.h"
+#include "bn_sprite_items_energia_full_psiquico.h"
+#include "bn_sprite_items_energia_full_siniestro.h"
+
 #include "funciones_diccionario.h"
 
 bn::vector<bn::sprite_ptr,4> dibuja_carta_full(carta _carta,int x,int y);

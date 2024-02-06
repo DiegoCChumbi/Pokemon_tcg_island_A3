@@ -1,0 +1,1 @@
+energia_full_fuego_bn_gfx.o: energia_full_fuego_bn_gfx.s

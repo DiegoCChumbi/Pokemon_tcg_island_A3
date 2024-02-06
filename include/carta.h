@@ -12,6 +12,7 @@ private:
     /*
     Para tipo1 y tipo2 consultar funciones_carta.cpp
     */
+   carta* atachado_a = nullptr;
 public:
 
     //constructor
@@ -21,11 +22,13 @@ public:
     bn::string<32> obtener_nombre() const;
     int obtener_tipo1() const;
     int obtener_tipo2() const;
+    carta* obtener_atachado_a() const;
 
     // Funciones para modificar los valores privados
     void establecer_nombre(const bn::string<32>& nuevo_nombre);
     void establecer_tipo1(int nuevo_tipo1);
     void establecer_tipo2(int nuevo_tipo2);
+    void establecer_atachado_a(carta* nueva_carta);
 };
 
 #endif // CARTA_H

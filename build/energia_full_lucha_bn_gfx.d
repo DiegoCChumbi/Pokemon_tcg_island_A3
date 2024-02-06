@@ -1,0 +1,1 @@
+energia_full_lucha_bn_gfx.o: energia_full_lucha_bn_gfx.s

@@ -22,6 +22,11 @@ int carta::obtener_tipo2() const
     return tipo2;
 }
 
+carta* carta::obtener_atachado_a() const
+{
+    return atachado_a;
+}
+
 // Funciones para modificar los valores privados
 void carta::establecer_nombre(const bn::string<32>& nuevo_nombre) {
     nombre = nuevo_nombre;
@@ -33,4 +38,8 @@ void carta::establecer_tipo1(int nuevo_tipo1) {
 
 void carta::establecer_tipo2(int nuevo_tipo2) {
     tipo2 = nuevo_tipo2;
+}
+
+void carta::establecer_atachado_a(carta* nueva_carta){
+    atachado_a = nueva_carta;
 }

@@ -18,6 +18,7 @@
 
 #include "funciones_cartas.h"
 #include "carta.h"
+#include "estatus.h"
 #include "funciones_diccionario.h"
 #include "funciones_mostrar_informacion.h"
 #include "bn_sprite_items_flecha.h"
@@ -38,7 +39,7 @@ bool verificar_mano_inicial(bn::vector<carta,60> tronco, int indices[5]);
 
 //Movimiento de cartas
 void robar_carta(bn::vector<carta,60> tronco,bn::vector<bn::sprite_ptr,60>& imagenes,bn::sprite_ptr& _carta,int indices[5],int cant_cartas,int a_quien);
-void mano_juego(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
+void mano_juego(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien,bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
 void mano_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
 void mano_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
 void deck_premios(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos,int a_quien);
@@ -55,10 +56,18 @@ void turno_jugador(bn::vector<bn::fixed_point,19> pos,
                     bn::vector<bn::sprite_ptr,60>& imagenes_contrincante,
                     bn::vector<carta,60>& deck_j,
                     bn::vector<carta,60>& deck_o, 
-                    int indices_j[5],int indices_o[5]);
+                    int indices_j[5],int indices_o[5],int n_turno,
+                    bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
+// void turno_oponente(bn::vector<bn::fixed_point,19> pos,
+//                     bn::vector<bn::sprite_ptr,60>& imagenes_jugador, 
+//                     bn::sprite_ptr& carta_j,
+//                     bn::vector<bn::sprite_ptr,60>& imagenes_contrincante,
+//                     bn::vector<carta,60>& deck_j,
+//                     bn::vector<carta,60>& deck_o, 
+//                     int indices_j[5],int indices_o[5],int n_turno);
 void juega_carta(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,
                  bn::vector<bn::sprite_ptr,60>& imagenes_j,bn::vector<bn::sprite_ptr,60>& imagenes_o,
-                 carta* carta,int indice,bn::sprite_ptr &flecha,int indices_j[5],bn::vector<bn::fixed_point,19> pos);
+                 carta* carta,int indice,bn::sprite_ptr &flecha,int indices_j[5],bn::vector<bn::fixed_point,19> pos,bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
 void espera_a_presionado();
 void espera_b_presionado();
 void wait(int tiempo);
@@ -68,7 +77,8 @@ void seteo_inicial( bn::vector<bn::fixed_point,19> pos,
                     bn::vector<bn::sprite_ptr,60>& imagenes_contrincante,
                     bn::vector<carta,60>& deck_j,
                     bn::vector<carta,60>& deck_o, 
-                    int indices_j[5],int indices_o[5]);
+                    int indices_j[5],int indices_o[5],
+                    bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
 
 //herramientas
 void log_tronco(bn::vector<carta,60> tronco,int indices[5]);

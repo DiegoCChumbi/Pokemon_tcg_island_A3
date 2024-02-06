@@ -459,6 +459,79 @@ bn::vector<bn::sprite_ptr,4> dibuja_carta_full(carta _carta,int x, int y){
         }
         break;
    }
+   case 10:{
+    switch (tipo2)
+        {
+        case 1:{
+            return imagen;
+        }
+        case 2:{
+            return imagen;
+        }
+        case 3:{
+            return imagen;
+        }
+        case 4:{    //electrica
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::energia_full_electrico,n);
+                builder.set_position(x,y+64*n);
+                imagen.push_back(builder.release_build());
+            }
+            return imagen;
+        }
+        case 5:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::energia_full_fuego,n);
+                builder.set_position(x,y+64*n);
+                imagen.push_back(builder.release_build());
+            }
+            return imagen;
+        }
+        case 6:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::energia_full_lucha,n);
+                builder.set_position(x,y+64*n);
+                imagen.push_back(builder.release_build());
+            }
+            return imagen;
+        }
+        case 7:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::energia_full_metal,n);
+                builder.set_position(x,y+64*n);
+                imagen.push_back(builder.release_build());
+            }
+            return imagen;
+        }
+        case 8:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::energia_full_planta,n);
+                builder.set_position(x,y+64*n);
+                imagen.push_back(builder.release_build());
+            }
+            return imagen;
+        }
+        case 9:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::energia_full_psiquico,n);
+                builder.set_position(x,y+64*n);
+                imagen.push_back(builder.release_build());
+            }
+            return imagen;
+        }
+        case 10:{
+            for(int n = 0; n < 3;n++){
+                bn::sprite_builder builder(bn::sprite_items::energia_full_siniestro,n);
+                builder.set_position(x,y+64*n);
+                imagen.push_back(builder.release_build());
+            }
+            return imagen;
+        }    
+        default:
+            break;
+        }
+        break;
+   }
     default:
     break;
    }

@@ -1,0 +1,1 @@
+energia_full_metal_bn_gfx.o: energia_full_metal_bn_gfx.s
