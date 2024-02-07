@@ -41,8 +41,8 @@ void combate(bn::vector<carta,60>& tronco_jugador,bn::vector<carta,60>& tronco_o
     bn::fixed_point pos_deck_o(-47,-18);
 
     //posiciones de los descartes
-    bn::fixed_point pos_descarte_j(97,36);
-    bn::fixed_point pos_descarte_o(-47,-41);
+    bn::fixed_point pos_descarte_j(97,37);
+    bn::fixed_point pos_descarte_o(-47,-40);
 
     //posiciones de los premios
     bn::fixed_point pos_premios_j(-47,13);
@@ -818,7 +818,7 @@ void turno_jugador(bn::vector<bn::fixed_point,19> pos,
                     informacion = 60 - indices_o[4];
                 }
 
-                if(flecha.position() == pos[14] or flecha.position() == pos[15]){       //se muestra la informacion con un boton para informacion destallada
+                if(flecha.position() == pos[14] or flecha.position() == pos[15]){       //se muestra la informacion con un boton para informacion destallada DESCARTES
                     while(!bn::keypad::b_pressed()){
 
                     }
@@ -832,6 +832,7 @@ void turno_jugador(bn::vector<bn::fixed_point,19> pos,
                     }
                 }
             }
+            log_tronco(deck_j,indices_j);
         }
 
         bn::core::update();
@@ -859,14 +860,22 @@ void juega_carta(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,
                 if(indices_j[0]<6){
                     if(tipo1 > ESPALDA && tipo1 < V){         //y si es una carta basica
                         if(es_basico(*carta)){
-                            mano_juego(deck_j,imagenes_j,indices_j,indice,pos,0,estatus_j);
+                            mano_juego(deck_j,imagenes_j,indices_j,indice,pos,JUGADOR,estatus_j);
                             break;
                         }
                     }else if(tipo1 > NORMAL_C_H && tipo1 < VSTAR){   //los V siempre son basicos
-                        mano_juego(deck_j,imagenes_j,indices_j,indice,pos,0,estatus_j);
+                        mano_juego(deck_j,imagenes_j,indices_j,indice,pos,JUGADOR,estatus_j);
                         break;
                     }else if(tipo1 == ENERGIAS_BASICA && posible_energia){         //si es energia basica
-                        //(*carta).atachado_a = &(seleccionar(flecha));
+                        boton.set_visible(false);
+                        class carta* resultado = seleccionar(deck_j,deck_o,pos,imagenes_j,imagenes_o,indices_j,flecha,DE_JUEGO_J);
+                        if(resultado != nullptr){
+                            (*carta).establecer_atachado_a(resultado);
+                            mano_atachadas(deck_j,imagenes_j,indices_j,indice,pos,JUGADOR);
+                            return;
+                        }else{
+                            boton.set_visible(true);
+                        }
                     }
                 }
             }
@@ -878,22 +887,112 @@ void juega_carta(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,
         
 }
 
-// carta seleccionar(bn::sprite_ptr flecha,int condicion){
-//     switch (condicion)
-//     {
-//     case 1:{            //selecciona carta de la mano
+carta* seleccionar(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,60>& imagenes_jugador,bn::vector<bn::sprite_ptr,60>& imagenes_contrincante,int indices_j[5],bn::sprite_ptr flecha,int condicion){
 
-//     }
-//     case 2:{            //seleccionar carta en juego tuya
+    espera_a_presionado();
 
-//     }
-//     case 3:{            //seleccionar carta en juego del oponente
+    bn::fixed_point pos_inicial = flecha.position();
 
-//     }
-//     default:
-//         break;
-//     }
-// }
+    flecha.set_position(pos[0]);
+
+    const bn::sprite_palette_ptr paleta_original = flecha.palette();
+    const bn::sprite_palette_item& paleta_alt = bn::sprite_palette_items::p_flecha_alt;
+
+    flecha.set_palette(paleta_alt);
+
+    carta vacia(" ",0,0);
+    carta* seleccionada = &vacia;
+    bool actualizado = false;
+        
+    while(true){
+        BN_LOG("Estoy buscando seleccionar");
+        if(bn::keypad::b_pressed()){
+            flecha.set_position(pos_inicial);
+            flecha.set_palette(paleta_original);
+            return nullptr;
+        }
+
+        if(bn::keypad::up_pressed()){
+            flecha.set_position(mas_cercano(flecha.position(),pos,imagenes_jugador,imagenes_contrincante,ARRIBA,indices_j));
+            actualizado = true;
+        }else if(bn::keypad::down_pressed()){
+            flecha.set_position(mas_cercano(flecha.position(),pos,imagenes_jugador,imagenes_contrincante,ABAJO,indices_j));
+            actualizado = true;
+        }else if(bn::keypad::right_pressed()){
+            flecha.set_position(mas_cercano(flecha.position(),pos,imagenes_jugador,imagenes_contrincante,DERECHA,indices_j));
+            actualizado = true;
+        }else if(bn::keypad::left_pressed()){
+            flecha.set_position(mas_cercano(flecha.position(),pos,imagenes_jugador,imagenes_contrincante,IZQUIERDA,indices_j));
+            actualizado = true;
+        }
+
+        int n = 0;
+
+        if(actualizado){
+            if(flecha.y() > 0){
+                n=0;
+                for(bn::sprite_ptr temp : imagenes_jugador){
+                    if(temp.x() == flecha.x()) {
+                        if(temp.y() == flecha.y()){
+                            seleccionada = &deck_j[n];
+                            break;
+                        }
+                    }
+                    n++;
+                    seleccionada = &vacia;
+                }
+                
+            }else{
+                n=0;
+                for(bn::sprite_ptr temp : imagenes_contrincante){
+                    if(temp.x() == flecha.x()) {
+                        if(temp.y() == flecha.y()){
+                            seleccionada = &deck_o[n];
+                            break;
+                        }
+                    }
+                    n++;
+                    seleccionada = &vacia;
+                }
+            }
+            actualizado = false;
+        }
+
+        if(bn::keypad::a_pressed()){
+            switch (condicion)
+            {
+            case DE_MANO:{
+                if(flecha.y() == 62){
+                    flecha.set_palette(paleta_original);
+                    flecha.set_position(pos[0]);
+                    return seleccionada;
+                } 
+                break;
+            }
+            case DE_JUEGO_J:{
+                if(flecha.y() == 36 || flecha.y() == 10){
+                    flecha.set_palette(paleta_original);
+                    flecha.set_position(pos[0]);
+                    return seleccionada;
+                }
+                break;
+            }
+            case DE_JUEGO_O:{
+                if(flecha.y() == -41 || flecha.y() == -17){
+                    flecha.set_palette(paleta_original);
+                    flecha.set_position(pos[0]);
+                    return seleccionada;
+                }
+                break;
+            }
+            default:
+                break;
+            }
+        }
+
+        bn::core::update();
+    }
+}
 
 void espera_a_presionado() {        //se asegura que la accion de presionar y soltar sean contada una sola vez
     // Espera a que se presione la tecla A

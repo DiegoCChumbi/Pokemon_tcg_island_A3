@@ -233,6 +233,7 @@ funciones_combate.o: \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_energia_full_psiquico.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_energia_full_siniestro.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_flecha.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_flecha_alt.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_boton_usar.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_boton_listo.h
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_combate.h:
@@ -468,5 +469,6 @@ funciones_combate.o: \
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_energia_full_psiquico.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_energia_full_siniestro.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_flecha.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_flecha_alt.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_boton_usar.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_boton_listo.h:

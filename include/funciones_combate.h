@@ -22,6 +22,7 @@
 #include "funciones_diccionario.h"
 #include "funciones_mostrar_informacion.h"
 #include "bn_sprite_items_flecha.h"
+#include "bn_sprite_palette_items_p_flecha_alt.h"
 
 #include "bn_sprite_items_boton_usar.h"
 #include "bn_sprite_items_boton_listo.h"
@@ -42,6 +43,7 @@ void robar_carta(bn::vector<carta,60> tronco,bn::vector<bn::sprite_ptr,60>& imag
 void mano_juego(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien,bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
 void mano_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
 void mano_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
+void mano_atachadas(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
 void deck_premios(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos,int a_quien);
 void deck_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos,int a_quien);
 void premios_mano(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
@@ -80,7 +82,7 @@ void seteo_inicial( bn::vector<bn::fixed_point,19> pos,
                     bn::vector<carta,60>& deck_o, 
                     int indices_j[5],int indices_o[5],
                     bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
-
+carta* seleccionar(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,60>& imagenes_j,bn::vector<bn::sprite_ptr,60>& imagenes_o,int indices_j[5],bn::sprite_ptr flecha,int condicion);
 //herramientas
 void log_tronco(bn::vector<carta,60> tronco,int indices[5]);
 

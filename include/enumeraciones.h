@@ -56,4 +56,10 @@ enum Direcciones{
     IZQUIERDA
 };
 
+enum Condicion{
+    DE_MANO,
+    DE_JUEGO_J,
+    DE_JUEGO_O
+};
+
 #endif // ENUMERACIONES_H
