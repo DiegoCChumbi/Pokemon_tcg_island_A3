@@ -29,9 +29,9 @@
 
 void combate(bn::vector<carta,60>& deck_jugador,bn::vector<carta,60>& deck_oponente,bn::random& random);
 void agrega_imagen(bn::vector<carta,60> tronco, bn::vector<bn::sprite_ptr,60>& imagenes,carta _carta,int a_quien);
-void agregar_imagenes_m(bn::vector<bn::sprite_ptr,60>& imagenes,carta _carta,int indices[5],int a_quien);
+void agregar_imagen(bn::vector<bn::sprite_ptr,60>& imagenes,carta _carta,int indices[5],int a_quien);
 void reorganiza_imagen(bn::vector<bn::sprite_ptr,60>& imagenes,int a ,int b);
-void reorganiza_imagen_m(bn::vector<bn::sprite_ptr, 60>& imagenes, int indices[5],bn::vector<bn::fixed_point,19> pos);
+void reorganiza_imagen(bn::vector<bn::sprite_ptr, 60>& imagenes, int indices[5],bn::vector<bn::fixed_point,19> pos);
 carta retirar_carta(bn::vector<carta,60> &tronco,bn::vector<bn::sprite_ptr,60>& imagenes ,int indices_jugador[5],int indice_carta);
 void cambio(bn::vector<carta,60>& tronco,int a, int b);
 void barajear(bn::vector<carta,60>& tronco,int indices[5],int n,bn::random& random);
@@ -42,7 +42,7 @@ bool verificar_mano_inicial(bn::vector<carta,60> tronco, int indices[5]);
 void robar_carta(bn::vector<carta,60> tronco,bn::vector<bn::sprite_ptr,60>& imagenes,bn::sprite_ptr& _carta,int indices[5],int cant_cartas,int a_quien);
 void mano_juego(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien,bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
 void mano_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
-void mano_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
+void mano_deck(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien,bn::vector<estatus,6>& _estatus);
 void mano_atachadas(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],int indice,bn::vector<bn::fixed_point,19> pos,int a_quien);
 void deck_premios(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos,int a_quien);
 void deck_descarte(bn::vector<carta,60>& tronco,bn::vector<bn::sprite_ptr,60>& imagenes,int indices[5],bn::vector<bn::fixed_point,19> pos,int a_quien);
@@ -82,7 +82,7 @@ void seteo_inicial( bn::vector<bn::fixed_point,19> pos,
                     bn::vector<carta,60>& deck_o, 
                     int indices_j[5],int indices_o[5],
                     bn::vector<estatus,6>& estatus_j,bn::vector<estatus,6>& estatus_o);
-carta* seleccionar(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,60>& imagenes_j,bn::vector<bn::sprite_ptr,60>& imagenes_o,int indices_j[5],bn::sprite_ptr flecha,int condicion);
+carta* seleccionar(bn::vector<carta,60>& deck_j,bn::vector<carta,60>& deck_o,bn::vector<bn::fixed_point,19> pos,bn::vector<bn::sprite_ptr,60>& imagenes_j,bn::vector<bn::sprite_ptr,60>& imagenes_o,int indices_j[5],bn::sprite_ptr flecha,int condicion,int& indice_seleccionada);
 //herramientas
 void log_tronco(bn::vector<carta,60> tronco,int indices[5]);
 

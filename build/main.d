@@ -148,6 +148,17 @@ main.o: \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/estatus.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_mini_energias.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mini_energia_base.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_agua.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_electrico.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_fuego.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_lucha.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_metal.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_planta.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_psiquico.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_siniestro.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_gratis.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_diccionario.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_v.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_vmax.h \
@@ -178,17 +189,6 @@ main.o: \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_math.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_regular_bg_items_informacion_cartas.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_affine_bg_items_pantalla_gris.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_mini_energias.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mini_energia_base.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_agua.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_electrico.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_fuego.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_lucha.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_metal.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_planta.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_psiquico.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_siniestro.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_gratis.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_cartas_full.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palettes.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_full_normal_base.h \
@@ -386,6 +386,17 @@ main.o: \
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/carta.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_string.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/estatus.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_mini_energias.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mini_energia_base.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_agua.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_electrico.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_fuego.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_lucha.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_metal.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_planta.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_psiquico.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_siniestro.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_gratis.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_diccionario.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_v.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mew_vmax.h:
@@ -416,17 +427,6 @@ main.o: \
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_math.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_regular_bg_items_informacion_cartas.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_affine_bg_items_pantalla_gris.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_mini_energias.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mini_energia_base.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_agua.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_electrico.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_fuego.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_lucha.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_metal.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_planta.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_psiquico.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_siniestro.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_gratis.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/funciones_cartas_full.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palettes.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_full_normal_base.h:

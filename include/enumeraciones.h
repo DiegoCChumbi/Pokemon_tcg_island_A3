@@ -16,7 +16,8 @@ enum Tipo1 {
 };
 
 enum Tipo2{
-    NORMAL = 1,
+    GRATIS,             //sirve para imprimir las mini energias cuando no se requiere energia
+    NORMAL,
     AGUA,
     DRAGON,
     ELECTRICO,
@@ -60,6 +61,15 @@ enum Condicion{
     DE_MANO,
     DE_JUEGO_J,
     DE_JUEGO_O
+};
+
+enum Estados_especiales{
+    NINGUNO,
+    CONFUNDIDO,
+    DORMINO,
+    ENVENENADO,
+    PARALIZADO,
+    QUEMADO
 };
 
 #endif // ENUMERACIONES_H

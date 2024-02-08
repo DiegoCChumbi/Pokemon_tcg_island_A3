@@ -40,10 +40,19 @@ int main()
     deck1.push_back(carta("Cinturón Elección",NO_POKEMON,OBJETO));
     deck1.push_back(carta("Cinturón Elección",NO_POKEMON,OBJETO));
     deck1.push_back(carta("Cinturón Elección",NO_POKEMON,OBJETO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
     deck1.push_back(carta("Cramobot",NO_POKEMON,OBJETO));
     deck1.push_back(carta("Cramobot",NO_POKEMON,OBJETO));
     deck1.push_back(carta("Cramobot",NO_POKEMON,OBJETO));
     deck1.push_back(carta("Cramobot",NO_POKEMON,OBJETO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
+    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
     deck1.push_back(carta("Brillo de Camila",NO_POKEMON,PARTIDARIO));
     deck1.push_back(carta("Brillo de Camila",NO_POKEMON,PARTIDARIO));
     deck1.push_back(carta("Brillo de Camila",NO_POKEMON,PARTIDARIO));
@@ -67,15 +76,8 @@ int main()
     deck1.push_back(carta("Ultra Ball",NO_POKEMON,OBJETO));
     deck1.push_back(carta("Ultra Ball",NO_POKEMON,OBJETO));
 
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
-    deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
+    
+    
     deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
     deck1.push_back(carta("Enegia Basica Psiquica",ENERGIAS_BASICA,PSIQUICO));
 

@@ -97,6 +97,6 @@
 #include "bn_sprite_palette_items_p_energia_siniestro.h"
 
 void dibuja(int tipo1, int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imagenes);
-void dibuja_m(int tipo1,int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imagenes,bn::vector<bn::sprite_ptr,60>::iterator ite);
+void dibuja(int tipo1,int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imagenes,bn::vector<bn::sprite_ptr,60>::iterator ite);  //dibuja cartas en juego
 
 #endif // FUNCIONES_CARTAS_H

@@ -1,34 +1,6 @@
 #include "funciones_cartas.h"
 
 void dibuja(int tipo1,int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imagenes){
-    //bn::sprite_ptr carta = bn::sprite_items::base.create_sprite(x,y);
-
-    /*  TIPO1
-    (0)  espalda carta
-    (1)  carta normal
-    (2)  carta normal habilidad
-    (3)  carta V
-    (4)  carta V habilidad
-    (5)  carta VSTAR
-    (6)  carta VSTAR habilidad
-    (7)  carta VMAX
-    (8)  carta VMAX habilidad
-    (9)  cartas no pokemon (1:objeto  2:partidario  3:estadio)
-    (10) carta energias basica
-    */
-
-    /*  TIPO2
-    (1)  normal
-    (2)  agua
-    (3)  dragon
-    (4)  electrico
-    (5)  fuego
-    (6)  lucha
-    (7)  metal
-    (8)  planta
-    (9)  psiquico
-    (10) siniestro 
-    */
 
     switch (tipo1)
     {
@@ -377,35 +349,8 @@ void dibuja(int tipo1,int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imag
 
 }
 
-void dibuja_m(int tipo1,int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imagenes,bn::vector<bn::sprite_ptr,60>::iterator ite){
-    //bn::sprite_ptr carta = bn::sprite_items::base.create_sprite(x,y);
-
-    /*  TIPO1
-    (0)  espalda carta
-    (1)  carta normal
-    (2)  carta normal habilidad
-    (3)  carta V
-    (4)  carta V habilidad
-    (5)  carta VSTAR
-    (6)  carta VSTAR habilidad
-    (7)  carta VMAX
-    (8)  carta VMAX habilidad
-    (9)  cartas no pokemon (1:objeto  2:partidario  3:estadio)
-    (10) carta energias basica
-    */
-
-    /*  TIPO2
-    (1)  normal
-    (2)  agua
-    (3)  dragon
-    (4)  electrico
-    (5)  fuego
-    (6)  lucha
-    (7)  metal
-    (8)  planta
-    (9)  psiquico
-    (10) siniestro 
-    */
+void dibuja(int tipo1,int tipo2, int x,int y,bn::vector<bn::sprite_ptr,60>& imagenes,bn::vector<bn::sprite_ptr,60>::iterator ite){
+    //DIBUJA CARTAS EN JUEGO
 
     switch (tipo1)
     {

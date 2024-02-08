@@ -98,11 +98,11 @@ void mostrar_informacion(carta _carta){
 
         bn::vector<bn::sprite_ptr,2> ultimos;
         if(hay_debilidad){
-            ultimos.push_back(dibuja_mini_energia(actual->debilidad,0,y+14));
+            dibuja_mini_energia(actual->debilidad,0,y+14,ultimos);
             
         }
         if(hay_resistencia){
-            ultimos.push_back(dibuja_mini_energia(actual->resistencia,30,y+14));
+            dibuja_mini_energia(actual->resistencia,30,y+14,ultimos);
         }
 
         for(bn::sprite_ptr mini : ultimos){
@@ -114,9 +114,8 @@ void mostrar_informacion(carta _carta){
         int c_retirada = actual->retirada;
         int x_retirada = 78;
         for(int n = 0;n<c_retirada;n++){
-            bn::sprite_ptr normal = dibuja_mini_energia(1,x_retirada,y+22);
-            normal.set_bg_priority(1);
-            costo_retirada.push_back(normal);
+            dibuja_mini_energia(1,x_retirada,y+22,costo_retirada);
+            (costo_retirada.end()-1)->set_bg_priority(1);
             x_retirada += 5;
         }
 
@@ -220,7 +219,7 @@ bn::vector<bn::sprite_ptr,10> imprime_energias(bn::vector<int,10> requerimientos
     bn::vector<bn::sprite_ptr,10> imagenes;
 
     for(int energia : requerimientos){
-        imagenes.push_back(dibuja_mini_energia(energia,x,y));
+        dibuja_mini_energia(energia,x,y,imagenes);
         x += 5;
     }
 

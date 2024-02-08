@@ -31,12 +31,24 @@ funciones_mini_energias.o: \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_bpp_mode.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_compression_type.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_ptr.h \
- /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mini_energia_base.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_vector.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_vector_fwd.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_builder.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_camera_ptr.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_shape_size.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_item.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_tile.h \
  /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_item.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed_point.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_point.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_ptr.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_ptr.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_affine_mat_ptr.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_double_size_mode.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/enumeraciones.h \
+ /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mini_energia_base.h \
+ /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_agua.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_electrico.h \
  /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_fuego.h \
@@ -77,12 +89,24 @@ funciones_mini_energias.o: \
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_bpp_mode.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_compression_type.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_ptr.h:
-/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mini_energia_base.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_vector.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_vector_fwd.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_builder.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_camera_ptr.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_shape_size.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_item.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_tile.h:
 /home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_item.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_fixed_point.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_point.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_tiles_ptr.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_palette_ptr.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_affine_mat_ptr.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_double_size_mode.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/include/enumeraciones.h:
+/home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_items_mini_energia_base.h:
+/home/diego_space/Butano_actualizado/butano/butano/include/bn_sprite_item.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_agua.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_electrico.h:
 /home/diego_space/Butano_actualizado/butano/games/Pokemon_tcg_island_A3/build/bn_sprite_palette_items_p_mini_energia_fuego.h:
